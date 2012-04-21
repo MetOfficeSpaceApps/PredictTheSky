@@ -17,7 +17,7 @@ declare namespace uhaapi = "http://uhaapi";
 declare namespace space = "http://spaceapps";
 
 declare variable $met:api-key := "43d21b62-90a1-435f-8c56-534e204a3b74";
-
+declare variable $space:spaceapps-collection := "/db/spaceapps";
 
 declare function uhaapi:get-satelite($usspacecom-id, $lat, $lng) {
     let $url := concat("http://api.uhaapi.com/satellites/", $usspacecom-id, "/passes?lat=", $lat, "&amp;lng=", $lng) return
@@ -54,10 +54,10 @@ declare function space:simplify-weather-for-event($met-weather, $start as xs:dat
             let $weather-at-start := $before[count($before)] return
                 <weather>
                     <simple>
-                        { doc("/db/spaceapps/met/simpleWeatherTypes.xml")//simpleWeatherType[metOfficeWeatherTypeCode = $weather-at-start/@W]/description }
+                        { doc(concat($space:spaceapps-collection, "/met/simpleWeatherTypes.xml"))//simpleWeatherType[metOfficeWeatherTypeCode = $weather-at-start/@W]/description }
                     </simple>
                     <metOffice>
-                        { doc("/db/spaceapps/met/weatherTypes.xml")//weatherType[code eq $weather-at-start/@W]/Description }
+                        { doc(concat($space:spaceapps-collection, "/db/spaceapps/met/weatherTypes.xml"))//weatherType[code eq $weather-at-start/@W]/Description }
                         <chanceOfRain unit="%">{ string($weather-at-start/@Pp) }</chanceOfRain>
                         <temperature unit="C">{ string($weather-at-start/@T) }</temperature>
                         <feelsLikeTemperature unit="C">{ string($weather-at-start/@F) }</feelsLikeTemperature>
@@ -67,7 +67,10 @@ declare function space:simplify-weather-for-event($met-weather, $start as xs:dat
 
 
 let $lat := request:get-parameter("lat", "50.7218"),
-$lng := request:get-parameter("lng", "-3.5336") return
+$lng := request:get-parameter("lng", "-3.5336"),
+$format := request:get-parameter("format", "xml"),
+
+$null := util:declare-option("exist:serialize", concat("method=", $format)) return
 
     let $sattelites := 
         <satelites>
