@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AboutViewController.h"
 
-@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AboutViewControllerDelegate>
 
 @property (weak) IBOutlet UITableView *tableView;
 

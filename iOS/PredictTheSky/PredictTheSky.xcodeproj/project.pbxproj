@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700C87DD154329E20028F974 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C87DC154329E20028F974 /* AboutViewController.m */; };
 		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
 		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
 		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		700C87DB154329E20028F974 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		700C87DC154329E20028F974 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		700C87D9154329CF0028F974 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				700C87DB154329E20028F974 /* AboutViewController.h */,
+				700C87DC154329E20028F974 /* AboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		70C567101542EC8500965BFC = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +126,7 @@
 		70C567401542EDFA00965BFC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				700C87D9154329CF0028F974 /* About */,
 				70C567411542F3A300965BFC /* Main */,
 				70C567451542F3F400965BFC /* Event */,
 			);
@@ -205,6 +218,7 @@
 				70C567301542EC8600965BFC /* AppDelegate.m in Sources */,
 				70C567391542EC8600965BFC /* MainViewController.m in Sources */,
 				70C567441542F3E600965BFC /* EventViewController.m in Sources */,
+				700C87DD154329E20028F974 /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +346,7 @@
 				70C5673E1542EC8600965BFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

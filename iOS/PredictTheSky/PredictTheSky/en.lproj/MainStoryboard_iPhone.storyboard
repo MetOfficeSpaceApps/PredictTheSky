@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Qfp-pl-mHm">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -84,13 +85,49 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Predict the Sky" id="C5b-08-bEX"/>
+                    <navigationItem key="navigationItem" title="Predict the Sky" id="C5b-08-bEX">
+                        <barButtonItem key="leftBarButtonItem" title="About" id="dhd-js-2UI">
+                            <connections>
+                                <segue destination="OV6-DE-OJ6" kind="modal" identifier="aboutSegue" modalTransitionStyle="flipHorizontal" id="aAP-gn-IPQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Y6i-cB-yVU" id="eas-AY-Er7"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="688" y="34"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="oIm-pK-bco">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f27-hb-eVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="OV6-DE-OJ6" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yDB-0O-AOY">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="C06-zS-hOd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="About" id="pJa-xd-sdB">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="g9t-uM-mUo">
+                                            <connections>
+                                                <action selector="doneButton:" destination="OV6-DE-OJ6" id="wqF-S7-3ls"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D24-M8-fbG"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1228" y="-257"/>
         </scene>
         <!--Event View Controller - Event Info-->
         <scene sceneID="MUm-ag-lcW">
@@ -105,10 +142,16 @@
                     <navigationItem key="navigationItem" title="Event Info" id="Tp3-dq-GTg"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1101" y="34"/>
+            <point key="canvasLocation" x="1228" y="368"/>
         </scene>
     </scenes>
     <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButton:"/>
+            </relationships>
+        </class>
         <class className="EventViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EventViewController.h"/>
         </class>

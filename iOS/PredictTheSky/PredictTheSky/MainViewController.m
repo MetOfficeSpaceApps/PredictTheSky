@@ -31,10 +31,26 @@
     return 1;
 }
 
+#pragma mark AboutViewControllerDelegate
+-(void)didCloseAboutViewController
+{
+    [self.navigationController dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark Segue Handling
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"aboutSegue"]) {
+        AboutViewController *aboutVC = (AboutViewController *)segue.destinationViewController;
+        
+        aboutVC.delegate = self;
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
