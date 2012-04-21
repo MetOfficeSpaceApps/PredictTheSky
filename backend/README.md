@@ -6,3 +6,5 @@ This is written in XQuery and run's atop the eXist-db Native XML Database. You w
 The code here consists of a database backup which can be imported into eXist-db. After restoring, visit the URL http://localhost:8080/exist/rest/db/spaceapps/space.xql
 
 The parameters are ?lat=xyz&lng=abc&format=fmt where these are your latitude, longitude and format is either 'json' or 'xml'.
+
+The URL for a test service is available here - http://www.adamretter.org.uk/spaceapps/space.xql
