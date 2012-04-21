@@ -70,7 +70,7 @@ let $lat := request:get-parameter("lat", "50.7218"),
 $lng := request:get-parameter("lng", "-3.5336"),
 $format := request:get-parameter("format", "xml"),
 
-$null := util:declare-option("exist:serialize", concat("method=", $format)) return
+$null := util:declare-option("exist:serialize", concat("method=", $format, if($format eq "json")then " media-type=application/json" else "")) return
 
     let $sattelites := 
         <satelites>
