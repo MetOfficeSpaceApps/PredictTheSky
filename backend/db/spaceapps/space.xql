@@ -57,7 +57,7 @@ declare function space:simplify-weather-for-event($met-weather, $start as xs:dat
                         { doc(concat($space:spaceapps-collection, "/met/simpleWeatherTypes.xml"))//simpleWeatherType[metOfficeWeatherTypeCode = $weather-at-start/@W]/description }
                     </simple>
                     <metOffice>
-                        { doc(concat($space:spaceapps-collection, "/db/spaceapps/met/weatherTypes.xml"))//weatherType[code eq $weather-at-start/@W]/Description }
+                        { doc(concat($space:spaceapps-collection, "/met/weatherTypes.xml"))//weatherType[code eq $weather-at-start/@W]/Description }
                         <chanceOfRain unit="%">{ string($weather-at-start/@Pp) }</chanceOfRain>
                         <temperature unit="C">{ string($weather-at-start/@T) }</temperature>
                         <feelsLikeTemperature unit="C">{ string($weather-at-start/@F) }</feelsLikeTemperature>

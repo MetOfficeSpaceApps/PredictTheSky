@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  PredictTheSky
 //
 //  Created by Nick Charlton on 21/04/2012.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak) IBOutlet UITableView *tableView;
 
 @end
