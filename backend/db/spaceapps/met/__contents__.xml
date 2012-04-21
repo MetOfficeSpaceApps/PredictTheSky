@@ -1,0 +1,12 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/spaceapps/met" owner="admin" group="dba" mode="755" created="2012-04-21T12:21:21+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="XMLResource" name="simpleWeatherTypes.xml" owner="admin" group="dba" mode="644" created="2012-04-21T15:54:07+01:00" modified="2012-04-21T15:54:07+01:00" filename="simpleWeatherTypes.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="visibilities.xml" owner="admin" group="dba" mode="644" created="2012-04-21T12:25:08+01:00" modified="2012-04-21T12:25:08+01:00" filename="visibilities.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="XMLResource" name="weatherTypes.xml" owner="admin" group="dba" mode="644" created="2012-04-21T12:24:14+01:00" modified="2012-04-21T12:24:14+01:00" filename="weatherTypes.xml" mimetype="application/xml">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
