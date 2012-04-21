@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
+		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
+		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
+		70C5672A1542EC8600965BFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70C567281542EC8600965BFC /* InfoPlist.strings */; };
+		70C5672C1542EC8600965BFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C5672B1542EC8600965BFC /* main.m */; };
+		70C567301542EC8600965BFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C5672F1542EC8600965BFC /* AppDelegate.m */; };
+		70C567331542EC8600965BFC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C567311542EC8600965BFC /* MainStoryboard_iPhone.storyboard */; };
+		70C567361542EC8600965BFC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C567341542EC8600965BFC /* MainStoryboard_iPad.storyboard */; };
+		70C567391542EC8600965BFC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C567381542EC8600965BFC /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		70C567231542EC8600965BFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		70C567271542EC8600965BFC /* PredictTheSky-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PredictTheSky-Info.plist"; sourceTree = "<group>"; };
+		70C567291542EC8600965BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		70C5672B1542EC8600965BFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70C5672D1542EC8600965BFC /* PredictTheSky-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PredictTheSky-Prefix.pch"; sourceTree = "<group>"; };
+		70C5672E1542EC8600965BFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		70C5672F1542EC8600965BFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		70C567321542EC8600965BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		70C567351542EC8600965BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		70C567371542EC8600965BFC /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		70C567381542EC8600965BFC /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70C567181542EC8500965BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70C567201542EC8600965BFC /* UIKit.framework in Frameworks */,
+				70C567221542EC8600965BFC /* Foundation.framework in Frameworks */,
+				70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70C567101542EC8500965BFC = {
+			isa = PBXGroup;
+			children = (
+				70C567251542EC8600965BFC /* PredictTheSky */,
+				70C5671E1542EC8600965BFC /* Frameworks */,
+				70C5671C1542EC8500965BFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70C5671C1542EC8500965BFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70C5671B1542EC8500965BFC /* PredictTheSky.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70C5671E1542EC8600965BFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70C5671F1542EC8600965BFC /* UIKit.framework */,
+				70C567211542EC8600965BFC /* Foundation.framework */,
+				70C567231542EC8600965BFC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70C567251542EC8600965BFC /* PredictTheSky */ = {
+			isa = PBXGroup;
+			children = (
+				70C567401542EDFA00965BFC /* View Controllers */,
+				70C5673F1542EDEE00965BFC /* Storyboards */,
+				70C5672E1542EC8600965BFC /* AppDelegate.h */,
+				70C5672F1542EC8600965BFC /* AppDelegate.m */,
+				70C567261542EC8600965BFC /* Supporting Files */,
+			);
+			path = PredictTheSky;
+			sourceTree = "<group>";
+		};
+		70C567261542EC8600965BFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70C567271542EC8600965BFC /* PredictTheSky-Info.plist */,
+				70C567281542EC8600965BFC /* InfoPlist.strings */,
+				70C5672B1542EC8600965BFC /* main.m */,
+				70C5672D1542EC8600965BFC /* PredictTheSky-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70C5673F1542EDEE00965BFC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				70C567311542EC8600965BFC /* MainStoryboard_iPhone.storyboard */,
+				70C567341542EC8600965BFC /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		70C567401542EDFA00965BFC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70C567371542EC8600965BFC /* MainViewController.h */,
+				70C567381542EC8600965BFC /* MainViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70C5671A1542EC8500965BFC /* PredictTheSky */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70C5673C1542EC8600965BFC /* Build configuration list for PBXNativeTarget "PredictTheSky" */;
+			buildPhases = (
+				70C567171542EC8500965BFC /* Sources */,
+				70C567181542EC8500965BFC /* Frameworks */,
+				70C567191542EC8500965BFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PredictTheSky;
+			productName = PredictTheSky;
+			productReference = 70C5671B1542EC8500965BFC /* PredictTheSky.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70C567121542EC8500965BFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 70C567151542EC8500965BFC /* Build configuration list for PBXProject "PredictTheSky" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 70C567101542EC8500965BFC;
+			productRefGroup = 70C5671C1542EC8500965BFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70C5671A1542EC8500965BFC /* PredictTheSky */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70C567191542EC8500965BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70C5672A1542EC8600965BFC /* InfoPlist.strings in Resources */,
+				70C567331542EC8600965BFC /* MainStoryboard_iPhone.storyboard in Resources */,
+				70C567361542EC8600965BFC /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70C567171542EC8500965BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70C5672C1542EC8600965BFC /* main.m in Sources */,
+				70C567301542EC8600965BFC /* AppDelegate.m in Sources */,
+				70C567391542EC8600965BFC /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		70C567281542EC8600965BFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70C567291542EC8600965BFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		70C567311542EC8600965BFC /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70C567321542EC8600965BFC /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		70C567341542EC8600965BFC /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70C567351542EC8600965BFC /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70C5673A1542EC8600965BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70C5673B1542EC8600965BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70C5673D1542EC8600965BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nick Charlton (MKHPWCAM54)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PredictTheSky/PredictTheSky-Prefix.pch";
+				INFOPLIST_FILE = "PredictTheSky/PredictTheSky-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1306C3A3-B8EC-4D00-A831-79A0B68F7D45";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		70C5673E1542EC8600965BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nick Charlton (MKHPWCAM54)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PredictTheSky/PredictTheSky-Prefix.pch";
+				INFOPLIST_FILE = "PredictTheSky/PredictTheSky-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1306C3A3-B8EC-4D00-A831-79A0B68F7D45";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70C567151542EC8500965BFC /* Build configuration list for PBXProject "PredictTheSky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70C5673A1542EC8600965BFC /* Debug */,
+				70C5673B1542EC8600965BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70C5673C1542EC8600965BFC /* Build configuration list for PBXNativeTarget "PredictTheSky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70C5673D1542EC8600965BFC /* Debug */,
+				70C5673E1542EC8600965BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70C567121542EC8500965BFC /* Project object */;
+}

@@ -1,0 +1,7 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/spaceapps" owner="admin" group="dba" mode="755" created="2012-04-21T12:21:16+01:00" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="space.xql" owner="admin" group="dba" mode="644" created="2012-04-21T11:48:22+01:00" modified="2012-04-21T16:29:16+01:00" filename="space.xql" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <subcollection name="met" filename="met"/>
+</collection>
