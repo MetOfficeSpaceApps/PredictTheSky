@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Where Am I</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="javascript/geolocationService.js"></script>
+    <style>
+        #locateMeButton {
+            display: inline;
+        }
+
+        #locationDiv {
+             display: inline;
+        }
+    </style>
+</head>
+<body>
+   <button id="locateMeButton" onclick="getLocation()"> Find me</button>
+   <div id="locationDiv"></div>
+</body>
+</html>
