@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  PredictTheSky
 //
 //  Created by Nick Charlton on 21/04/2012.
@@ -14,16 +14,27 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad
+@synthesize tableView = _tableView;
+
+#pragma mark UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"EventCell"];
+    
+    cell.textLabel.text = @"Event";
+    
+    return cell;
 }
 
-- (void)viewDidUnload
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    return 1;
+}
+
+#pragma mark UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
