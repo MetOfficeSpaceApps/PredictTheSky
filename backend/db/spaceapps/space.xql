@@ -81,15 +81,18 @@ $lng := request:get-parameter("lng", "-3.5336") return
             for $sattelite-id in $sattelites/satelite/@id return
                 uhaapi:get-satelite($sattelite-id, $lat, $lng)
         return
-            <events>{
-                for $pass in $sattelites-xml//pass
-                order by xs:dateTime($pass/start/time) return
-                    <event>
-                        <title>{$sattelites/satelite[@id eq $pass/parent::satellite_passes/@id]/text()}</title>
-                        {
-                            $pass/start,
-                            $pass/end,
-                            space:simplify-weather-for-event($met-weather, xs:dateTime($pass/start/time))
-                        }
-                    </event>
-            }</events>
+            <events>
+                <location continent="{lower-case($met-weather//Location/@continent)}" country="{lower-case($met-weather//Location/@country)}" name="{lower-case($met-weather//Location/@name)}" lon="{$met-weather//Location/@lon}" lat="{$met-weather//Location/@lat}"/>
+                {
+                    for $pass in $sattelites-xml//pass
+                    order by xs:dateTime($pass/start/time) return
+                        <event>
+                            <title>{$sattelites/satelite[@id eq $pass/parent::satellite_passes/@id]/text()}</title>
+                            {
+                                $pass/start,
+                                $pass/end,
+                                space:simplify-weather-for-event($met-weather, xs:dateTime($pass/start/time))
+                            }
+                        </event>
+                }
+            </events>
