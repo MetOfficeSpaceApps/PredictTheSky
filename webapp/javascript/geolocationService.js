@@ -3,11 +3,11 @@
  * User: angela.relle
  * Date: 21/04/12
  * Time: 15:19
- * To change this template use File | Settings | File Templates.
- */
+  */
 
 var latitude;
 var longitude;
+var currentPosition;
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -18,10 +18,11 @@ function getLocation() {
 }
 
 function locateSuccess(position) {
+    currentPosition = position;
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
     // Now try to get information about where we're to
-    getStreetAddress(latitude, longitude);
+    onLocationSet(latitude, longitude);
 }
 
 function getStreetAddress(latitude, longitude) {
@@ -39,7 +40,6 @@ function getStreetAddress(latitude, longitude) {
             }
         }
         $("#cityLocationDiv").html(locationMessage);
-        getNextEventAndWeather(latitude, longitude);
     });
 }
 
@@ -65,6 +65,12 @@ function locateFail(geoPositionError) {
     }
     latitude = 50.727;
     longitude = -3.4749;
-    getStreetAddress(latitude, longitude);
+    onLocationSet(latitude, longitude);
+}
+
+function onLocationSet(latitude, longitude) {
+    getStreetAddress(latitude, longitude)
+    $("#nextEventDiv").html("Getting next event information...")
+    getNextEventAndWeather(latitude, longitude);
 }
 
