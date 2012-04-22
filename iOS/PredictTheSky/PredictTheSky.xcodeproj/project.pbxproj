@@ -32,6 +32,7 @@
 		700C881D154388620028F974 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C8808154388620028F974 /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		700C881E154388620028F974 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C8809154388620028F974 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		700C881F154388620028F974 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C880A154388620028F974 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		700C8821154403BF0028F974 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700C8820154403BF0028F974 /* CoreLocation.framework */; };
 		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
 		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
 		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
@@ -82,6 +83,7 @@
 		700C8813154388620028F974 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = ../../Libraries/AFNetworking/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
 		700C8814154388620028F974 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = ../../Libraries/AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = "<group>"; };
 		700C8815154388620028F974 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../../Libraries/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		700C8820154403BF0028F974 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700C8821154403BF0028F974 /* CoreLocation.framework in Frameworks */,
 				70C567201542EC8600965BFC /* UIKit.framework in Frameworks */,
 				70C567221542EC8600965BFC /* Foundation.framework in Frameworks */,
 				70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */,
@@ -224,6 +227,7 @@
 		70C5671E1542EC8600965BFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				700C8820154403BF0028F974 /* CoreLocation.framework */,
 				70C5671F1542EC8600965BFC /* UIKit.framework */,
 				70C567211542EC8600965BFC /* Foundation.framework */,
 				70C567231542EC8600965BFC /* CoreGraphics.framework */,

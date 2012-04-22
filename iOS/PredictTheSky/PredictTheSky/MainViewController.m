@@ -15,11 +15,19 @@
 @implementation MainViewController
 
 @synthesize tableView = _tableView;
+@synthesize locationManager = _locationManager;
+
 @synthesize nextEvent = _nextEvent;
 @synthesize nextEventObject = _nextEventPlace;
 @synthesize nextEventViewPeriod = _nextEventViewPeriod;
 @synthesize nextEventConditions = _nextEventConditions;
 @synthesize otherEvents = _otherEvents;
+
+#pragma mark View Lifecycle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self startMonitoringLocationUpdates];
+}
 
 #pragma mark UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,6 +68,42 @@
         AboutViewController *aboutVC = (AboutViewController *)segue.destinationViewController;
         
         aboutVC.delegate = self;
+    }
+}
+
+#pragma mark Location Services
+- (void)startMonitoringLocationUpdates
+{
+    if (nil == self.locationManager)
+        self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    self.locationManager.distanceFilter = 500;
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    #if DEBUG
+    NSLog(@"New Location: %@", newLocation);
+    #endif
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    #if DEBUG
+    NSLog(@"Failed with Error: %@", error);
+    #endif
+    
+    static BOOL warning_shown;
+    
+    if (!warning_shown) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Locate" message:@"You need to enable Location Services to locate the device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        warning_shown = YES;
+        [alert show];
     }
 }
 
