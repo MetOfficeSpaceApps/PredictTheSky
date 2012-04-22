@@ -14,19 +14,29 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:contentDescription="backdrop"
+            android:contentDescription="@string/backdrop_alt"
             android:scaleType="center"
             android:src="@drawable/aurora_photo" />
-
+
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="100px"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
             android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView2"
             android:background="@color/smokyglass"
             android:text="@string/overlay"
             android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/smokyglass"
+            android:src="@drawable/ic_launcher" android:contentDescription="@string/backdrop_alt"/>
 
     </RelativeLayout>
 
