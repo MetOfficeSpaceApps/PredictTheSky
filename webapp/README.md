@@ -6,5 +6,10 @@ work out where the user is, plus return basic data about the next event.
 See [http://www.dilkusha.co.uk/PredictTheSky/WhereAmI.html](http://www.dilkusha.co.uk/PredictTheSky/WhereAmI.html) - it isn't very pretty (Yet!)
 
 
+### Next steps 
+
+*   Add heading and logo
+*   Add indication that location is being sought
+*   Pretty up return results
 
 
