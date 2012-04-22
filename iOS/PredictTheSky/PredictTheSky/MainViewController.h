@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AboutViewController.h"
 
-@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AboutViewControllerDelegate>
 
 @property (weak) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UILabel *nextEvent;
+@property (weak, nonatomic) IBOutlet UILabel *nextEventObject;
+@property (weak, nonatomic) IBOutlet UILabel *nextEventViewPeriod;
+@property (weak, nonatomic) IBOutlet UILabel *nextEventConditions;
+@property (weak, nonatomic) IBOutlet UILabel *otherEvents;
 
 @end
