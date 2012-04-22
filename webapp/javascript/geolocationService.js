@@ -38,8 +38,8 @@ function getStreetAddress(latitude, longitude) {
                 locationMessage = country;
             }
         }
-        $("#findEventsButton").show();
-        $("#locationDiv").html(locationMessage);
+        $("#cityLocationDiv").html(locationMessage);
+        getNextEventAndWeather(latitude, longitude);
     });
 }
 
