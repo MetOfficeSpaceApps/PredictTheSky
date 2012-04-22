@@ -34,7 +34,7 @@ class FixedOffset(tzinfo):
 class sun:  
     """  
     Calculate sunrise and sunset based on equations from NOAA 
-    http://www.srrb.noaa.gov/highlights/sunrise/calcdetails.html 
+        
  
     typical use, calculating the sunrise at the present day: 
   
@@ -256,6 +256,10 @@ def GMST(year, month, day, hour):
     return [GMST, GAST]
     
 def altitudeAndAzimuth(year, month, day, hour, lat, long, acension, declination):
+    '''
+    THIS DOESN"T WORK YET!!!
+    Taken from http://aa.usno.navy.mil/faq/docs/Alt_Az.php
+    '''
     [gmst, gast] = GMST(year, month, day, hour)
     alpha = acension
     lambda1 = long

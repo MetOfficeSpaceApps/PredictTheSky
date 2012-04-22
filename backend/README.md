@@ -32,3 +32,24 @@ http://www.adamretter.org.uk/spaceapps/space.xql?lat=50.7218&lng=-3.5336&format=
 The URL for a test service is available here - http://www.adamretter.org.uk/spaceapps/space.xql
 
 Adam Retter <adam.retter@googlemail.com> / @adamretter
+
+
+Algorithms
+===========
+
+Code has been implemented (not necessarily working proerly) for the folowing algorithms
+
+Calculations for sunrise, sunset & twilight
+http://www.srrb.noaa.gov/highlights/sunrise/calcdetails.html 
+
+Julian Day
+Taken from http://aa.usno.navy.mil/faq/docs/JD_Formula.php
+
+Greenwich Apparent Sidereal Time
+Taken from http://aa.usno.navy.mil/faq/docs/GAST.php
+
+Azimuth/Altitude
+http://aa.usno.navy.mil/faq/docs/Alt_Az.php
+
+Stephen Haddad <stevehadd@yahoo.com> / @stevehadd
+Angela Relle
