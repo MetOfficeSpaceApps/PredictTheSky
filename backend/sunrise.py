@@ -206,18 +206,82 @@ class sun:
         self.atendevening = self.solarnoon_t+hourangle_at*4/1440
         self.darkmorning = self.solarnoon_t-hourangle_dark*4/1440
         self.darkevening = self.solarnoon_t+hourangle_dark*4/1440
-  
+def getsign(i1):
+    if i1 >= 0.0:
+        return 1.0
+    return -1.0
+
+def JulianDay (year, month, day, hour):
+    '''
+    COMPUTES THE JULIAN DATE (JD) GIVEN A GREGORIAN CALENDAR
+    DATE (YEAR,MONTH,DAY).
+    '''
+
+    #I= float(year)
+    #J= float(month)
+    #K= float(day)
+    #JD= K-32075+1461*(I+4800+(J-14)/12.0)/4+367*(J-2-(J-14.0)/12.0*12)  /12.0-3.0*((I+4900+(J-14)/12.0)/100.0)/4.0
+    
+    K=year
+    M= month
+    I = day
+    UT = hour
+    JD = 	367.0*K - float(int((7.0*(K+float(int((M+9)/12))))/4.0  ) ) + float(int((275*M)/9)) + I + 1721013.5 + UT/24.0 - 0.5 * getsign( 100.0*K+M-190002.5 ) + 0.5
+    return JD
+def GMST(year, month, day, hour):
+    JD = JulianDay (year, month, day, hour)
+    JD0 = JulianDay (year, month, day, 0)
+    H = (JD-JD0)*24.0
+    H1 = hour
+    JD0 = JD - H/24.0
+    D = jd1 - 2451545.0
+    D0 = JD0 - 2451545.0 
+    T = D/36525.0
+    GMST = 6.697374558 + 0.06570982441908 * D0 + 1.00273790935 * H + 0.000026 * (T*T)
+    omega= 125.04 - 0.052954 *D
+    L = 280.47 + 0.98565 * D
+    epsilon = 23.4393 - 0.0000004 *D
+    delta_psi = -0.000319 * sin (omega) - 0.000024 * sin (2*L)
+    eqeq = delta_psi * cos(epsilon) 
+    GMST = GMST%24.0
+    GAST = (GMST) + eqeq
+    GAST = GAST % 24.0
+    #GMST = 18.697374558 + 24.06570982441908 * D
+    return [GMST, GAST]
+    
+def altitudeAndAzimuth(year, month, day, hour, lat, long, acension, declination):
+    [gmst, gast] = GMST(year, month, day, hour)
+    alpha = acension
+    lambda1 = long
+    delta = declination
+    phi = latitude
+    
+    LHA_plus = (gast - alpha)*15.0 + lambda1
+    LHA_minus = (gast - alpha)*15.0 - lambda1
+    
+    altitude = asin(cos(LHA_plus)* cos(delta) * cos(phi)+sin(delta)*sin(phi) )
+    azimuth = atan ( -sin(LHA_plus)/(tan(delta)*cos(phi) - sin(phi) * cos(LHA_plus)) )
+    return [altitude,azimuth]
+    
 if __name__ == "__main__":  
     exeterLatitude = 50.7   
     exeterLongitude =  -3.4
     s=sun(lat=exeterLatitude,long=exeterLongitude)  
-      
-    tz1 = FixedOffset(60, 'British Summer Time')
+    tz1 = FixedOffset(60, 'British Summer Time')    
     timenow = datetime.now(tz1)
+    jd1 = JulianDay(timenow.year, timenow.month, timenow.day, timenow.hour )    
+    K=timenow.year
+    M= timenow.month
+    I = timenow.day
+    UT = timenow.hour
+    [gmst,gast] = GMST(timenow.year, timenow.month, timenow.day, timenow.hour )
+    #[altitude, azimuth] = altitudeAndAzimuth(year, month, day, hour, exeterLatitude, exeterLongitude, acension, declination)
+    print 'Julian Day is ' + str(jd1)
+    print 'GMST is ' + str(gmst)
     print 'Current time is ' + str(timenow)
     noontime = s.solarnoon(timenow)
     print 'sunrise at ' + str (s.sunrise(timenow)) + 'sunset at' + str(s.sunset(timenow))  
     print 'civil twilight starts at ' + str(s.civiltwilightmorning(timenow)) + 'in the morning and ends at ' + str(s.civiltwilightevening(timenow)) + 'in the evening'
     print 'astronomical twilight starts at ' + str(s.astrotwilightmorning(timenow)) + 'in the morning and ends at ' + str(s.astrotwilightevening(timenow)) + 'in the evening'
     print 'full darkness ends at ' + str(s.nightend(timenow)) + ' in the morning and starts at ' + str(s.nightstart(timenow)) + 'in the evening'
-    
+    #test
