@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AboutViewController.h"
 #import "CoreLocation/CoreLocation.h"
+#import "AFNetworking.h"
 
 @interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AboutViewControllerDelegate, CLLocationManagerDelegate>
 
@@ -22,5 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *otherEvents;
 
 - (void)startMonitoringLocationUpdates;
+- (void)fetchNextClearSkyEventWithLocation:(CLLocation *)location;
+- (void)fetchNextSkyEventsWithLocation:(CLLocation *)location;
 
 @end

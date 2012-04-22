@@ -89,6 +89,8 @@
     #if DEBUG
     NSLog(@"New Location: %@", newLocation);
     #endif
+    
+    [self fetchNextSkyEventsWithLocation:newLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -105,6 +107,29 @@
         warning_shown = YES;
         [alert show];
     }
+}
+
+#pragma mark Web Service Integration
+- (void)fetchNextClearSkyEventWithLocation:(CLLocation *)location
+{
+    
+}
+
+- (void)fetchNextSkyEventsWithLocation:(CLLocation *)location
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.adamretter.org.uk/spaceapps/space.xql?lat=%f&lng=%f&format=json", location.coordinate.latitude, location.coordinate.longitude]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        #ifdef DEBUG
+        NSLog(@"Response: %@", JSON);
+        #endif
+        
+    } failure:nil];
+    
+    [operation start];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
