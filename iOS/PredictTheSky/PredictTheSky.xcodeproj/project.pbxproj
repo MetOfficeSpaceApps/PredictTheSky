@@ -18,6 +18,10 @@
 		700C87F41543640C0028F974 /* light_rain@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C87EC1543640C0028F974 /* light_rain@2x.png */; };
 		700C87F51543640C0028F974 /* light_snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C87ED1543640C0028F974 /* light_snow.png */; };
 		700C87F61543640C0028F974 /* light_snow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C87EE1543640C0028F974 /* light_snow@2x.png */; };
+		700C87FB154385730028F974 /* aurora.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C87F7154385730028F974 /* aurora.jpg */; };
+		700C87FC154385730028F974 /* aurora@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C87F8154385730028F974 /* aurora@2x.jpg */; };
+		700C87FD154385730028F974 /* hubble.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C87F9154385730028F974 /* hubble.jpg */; };
+		700C87FE154385730028F974 /* hubble@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C87FA154385730028F974 /* hubble@2x.jpg */; };
 		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
 		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
 		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
@@ -43,6 +47,10 @@
 		700C87EC1543640C0028F974 /* light_rain@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light_rain@2x.png"; sourceTree = "<group>"; };
 		700C87ED1543640C0028F974 /* light_snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_snow.png; sourceTree = "<group>"; };
 		700C87EE1543640C0028F974 /* light_snow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light_snow@2x.png"; sourceTree = "<group>"; };
+		700C87F7154385730028F974 /* aurora.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aurora.jpg; sourceTree = "<group>"; };
+		700C87F8154385730028F974 /* aurora@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aurora@2x.jpg"; sourceTree = "<group>"; };
+		700C87F9154385730028F974 /* hubble.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hubble.jpg; sourceTree = "<group>"; };
+		700C87FA154385730028F974 /* hubble@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hubble@2x.jpg"; sourceTree = "<group>"; };
 		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +104,10 @@
 		700C87DF15435C830028F974 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				700C87F7154385730028F974 /* aurora.jpg */,
+				700C87F8154385730028F974 /* aurora@2x.jpg */,
+				700C87F9154385730028F974 /* hubble.jpg */,
+				700C87FA154385730028F974 /* hubble@2x.jpg */,
 				700C87E015435C930028F974 /* iss.jpg */,
 				700C87E115435C930028F974 /* iss@2x.jpg */,
 			);
@@ -276,6 +288,10 @@
 				700C87F41543640C0028F974 /* light_rain@2x.png in Resources */,
 				700C87F51543640C0028F974 /* light_snow.png in Resources */,
 				700C87F61543640C0028F974 /* light_snow@2x.png in Resources */,
+				700C87FB154385730028F974 /* aurora.jpg in Resources */,
+				700C87FC154385730028F974 /* aurora@2x.jpg in Resources */,
+				700C87FD154385730028F974 /* hubble.jpg in Resources */,
+				700C87FE154385730028F974 /* hubble@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
