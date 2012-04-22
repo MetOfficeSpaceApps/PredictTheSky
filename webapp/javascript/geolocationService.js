@@ -6,6 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
+var latitude;
+var longitude;
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(locateSuccess, locateFail);
@@ -15,8 +18,8 @@ function getLocation() {
 }
 
 function locateSuccess(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
     // Now try to get information about where we're to
     getStreetAddress(latitude, longitude);
 }
@@ -28,14 +31,14 @@ function getStreetAddress(latitude, longitude) {
         var city = result.address.city;
         var locationMessage = "I don't know where you are";
         if (city && city != "") {
-                locationMessage = "I think you are in " + city;
+                locationMessage = city;
         } else {
             var country = result.address.country;
             if (country && country != "") {
-                locationMessage = " I know you are in " + country + ", but can't find your nearest town/city. Your position is "
-                    + latitude + ", " + longitude;
+                locationMessage = country;
             }
         }
+        $("#findEventsButton").show();
         $("#locationDiv").html(locationMessage);
     });
 }
@@ -55,6 +58,10 @@ function locateFail(geoPositionError) {
             alert('The Geolocation request took too long and timed out');
             break;
         default:
+
     }
+    latitude = 50.727;
+    longitude = -3.4749;
+    getStreetAddress(latitude, longitude);
 }
 

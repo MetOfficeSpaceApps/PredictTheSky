@@ -4,18 +4,17 @@
     <title>Where Am I</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="javascript/geolocationService.js"></script>
-    <style>
-        #locateMeButton {
-            display: inline;
-        }
+    <script src="javascript/controller/landingPageController.js"></script>
+    <script src="javascript/predictTheSkyService.js"></script>
 
-        #locationDiv {
-             display: inline;
+    <style>
+        #findEventsButton {
+            display: inline;
         }
     </style>
 </head>
 <body>
-   <button id="locateMeButton" onclick="getLocation()"> Find me</button>
    <div id="locationDiv"></div>
+   <button id="findEventsButton">Get event info</button>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="backdrop"
+            android:scaleType="center"
+            android:src="@drawable/aurora_photo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="100px"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/smokyglass"
+            android:text="@string/overlay"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/OtherEventsText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/smokyglass"
+        android:text="@string/default_next_events"
+        android:textColor="@color/white" />
+
+    <ListView
+        android:id="@+id/nextEventsList"
+        android:layout_width="fill_parent"
+        android:layout_height="194dp" >
+        <!-- Preview: listitem=@android:layout/simple_list_item_1 -->
+
+    </ListView>
+
+</LinearLayout>
