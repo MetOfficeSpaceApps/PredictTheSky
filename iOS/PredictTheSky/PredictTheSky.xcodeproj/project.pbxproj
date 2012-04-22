@@ -43,6 +43,8 @@
 		700C883115440F990028F974 /* cloud_partial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882915440F990028F974 /* cloud_partial@2x.png */; };
 		700C8834154411070028F974 /* meteorshower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C8832154411070028F974 /* meteorshower.jpg */; };
 		700C8835154411070028F974 /* meteorshower@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C8833154411070028F974 /* meteorshower@2x.jpg */; };
+		700C8838154414180028F974 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 700C8837154414180028F974 /* about.html */; };
+		700C883A154415770028F974 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C8839154415770028F974 /* logo.png */; };
 		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
 		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
 		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
@@ -104,6 +106,8 @@
 		700C882915440F990028F974 /* cloud_partial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_partial@2x.png"; sourceTree = "<group>"; };
 		700C8832154411070028F974 /* meteorshower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meteorshower.jpg; sourceTree = "<group>"; };
 		700C8833154411070028F974 /* meteorshower@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meteorshower@2x.jpg"; sourceTree = "<group>"; };
+		700C8837154414180028F974 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		700C8839154415770028F974 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -237,6 +241,15 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
+		700C88361544140A0028F974 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				700C8839154415770028F974 /* logo.png */,
+				700C8837154414180028F974 /* about.html */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
 		70C567101542EC8500965BFC = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +294,7 @@
 		70C567261542EC8600965BFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				700C88361544140A0028F974 /* Content */,
 				700C87DE15435C7E0028F974 /* Graphics */,
 				70C567271542EC8600965BFC /* PredictTheSky-Info.plist */,
 				70C567281542EC8600965BFC /* InfoPlist.strings */,
@@ -404,6 +418,8 @@
 				700C883115440F990028F974 /* cloud_partial@2x.png in Resources */,
 				700C8834154411070028F974 /* meteorshower.jpg in Resources */,
 				700C8835154411070028F974 /* meteorshower@2x.jpg in Resources */,
+				700C8838154414180028F974 /* about.html in Resources */,
+				700C883A154415770028F974 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
