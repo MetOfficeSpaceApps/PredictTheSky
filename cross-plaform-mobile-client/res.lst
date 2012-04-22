@@ -1,0 +1,25 @@
+.res STANDARD
+.bin
+.include "Fonts/Cabin24BoldDarkGrey.mof"
+
+.res SMALL
+.bin
+.include "Fonts/Cabin20BoldDarkGrey.mof"
+
+.res IMAGE_ISS
+.image "images/iss400.png"
+
+.res ICON_ISS 
+.image "images/icons/issicon76.png"
+
+.res ICON_ARROW
+.image "images/icons/arrow.png"
+
+.res ICON_SKYMAP
+.image "images/icons/SkyMap76.png"
+
+.res ICON_WIKIPEDIA
+.image "images/icons/Wiki76.png"
+
+.res ICON_METOFFICE
+.image "images/icons/MetOffice76.png"
