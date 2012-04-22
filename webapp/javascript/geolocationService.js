@@ -60,8 +60,8 @@ function locateFail(geoPositionError) {
         default:
 
     }
-    latitude = 50.727;
-    longitude = -3.4749;
-    getStreetAddress(latitude, longitude);
+//    latitude = 50.727;
+//    longitude = -3.4749;
+//    getStreetAddress(latitude, longitude);
 }
 
