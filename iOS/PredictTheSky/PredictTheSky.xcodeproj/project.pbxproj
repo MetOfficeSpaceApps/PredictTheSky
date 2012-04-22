@@ -33,6 +33,14 @@
 		700C881E154388620028F974 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C8809154388620028F974 /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		700C881F154388620028F974 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 700C880A154388620028F974 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		700C8821154403BF0028F974 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700C8820154403BF0028F974 /* CoreLocation.framework */; };
+		700C882A15440F990028F974 /* cloud_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882215440F990028F974 /* cloud_clear.png */; };
+		700C882B15440F990028F974 /* cloud_clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882315440F990028F974 /* cloud_clear@2x.png */; };
+		700C882C15440F990028F974 /* cloud_mainly.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882415440F990028F974 /* cloud_mainly.png */; };
+		700C882D15440F990028F974 /* cloud_mainly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882515440F990028F974 /* cloud_mainly@2x.png */; };
+		700C882E15440F990028F974 /* cloud_obscured.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882615440F990028F974 /* cloud_obscured.png */; };
+		700C882F15440F990028F974 /* cloud_obscured@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882715440F990028F974 /* cloud_obscured@2x.png */; };
+		700C883015440F990028F974 /* cloud_partial.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882815440F990028F974 /* cloud_partial.png */; };
+		700C883115440F990028F974 /* cloud_partial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882915440F990028F974 /* cloud_partial@2x.png */; };
 		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
 		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
 		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
@@ -84,6 +92,14 @@
 		700C8814154388620028F974 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFXMLRequestOperation.h; path = ../../Libraries/AFNetworking/AFNetworking/AFXMLRequestOperation.h; sourceTree = "<group>"; };
 		700C8815154388620028F974 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "../../Libraries/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		700C8820154403BF0028F974 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		700C882215440F990028F974 /* cloud_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud_clear.png; sourceTree = "<group>"; };
+		700C882315440F990028F974 /* cloud_clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_clear@2x.png"; sourceTree = "<group>"; };
+		700C882415440F990028F974 /* cloud_mainly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud_mainly.png; sourceTree = "<group>"; };
+		700C882515440F990028F974 /* cloud_mainly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_mainly@2x.png"; sourceTree = "<group>"; };
+		700C882615440F990028F974 /* cloud_obscured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud_obscured.png; sourceTree = "<group>"; };
+		700C882715440F990028F974 /* cloud_obscured@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_obscured@2x.png"; sourceTree = "<group>"; };
+		700C882815440F990028F974 /* cloud_partial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud_partial.png; sourceTree = "<group>"; };
+		700C882915440F990028F974 /* cloud_partial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_partial@2x.png"; sourceTree = "<group>"; };
 		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +167,14 @@
 		700C87E41543614B0028F974 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				700C882215440F990028F974 /* cloud_clear.png */,
+				700C882315440F990028F974 /* cloud_clear@2x.png */,
+				700C882415440F990028F974 /* cloud_mainly.png */,
+				700C882515440F990028F974 /* cloud_mainly@2x.png */,
+				700C882615440F990028F974 /* cloud_obscured.png */,
+				700C882715440F990028F974 /* cloud_obscured@2x.png */,
+				700C882815440F990028F974 /* cloud_partial.png */,
+				700C882915440F990028F974 /* cloud_partial@2x.png */,
 				700C87E71543640C0028F974 /* heavy_rain.png */,
 				700C87E81543640C0028F974 /* heavy_rain@2x.png */,
 				700C87E91543640C0028F974 /* heavy_snow.png */,
@@ -364,6 +388,14 @@
 				700C87FC154385730028F974 /* aurora@2x.jpg in Resources */,
 				700C87FD154385730028F974 /* hubble.jpg in Resources */,
 				700C87FE154385730028F974 /* hubble@2x.jpg in Resources */,
+				700C882A15440F990028F974 /* cloud_clear.png in Resources */,
+				700C882B15440F990028F974 /* cloud_clear@2x.png in Resources */,
+				700C882C15440F990028F974 /* cloud_mainly.png in Resources */,
+				700C882D15440F990028F974 /* cloud_mainly@2x.png in Resources */,
+				700C882E15440F990028F974 /* cloud_obscured.png in Resources */,
+				700C882F15440F990028F974 /* cloud_obscured@2x.png in Resources */,
+				700C883015440F990028F974 /* cloud_partial.png in Resources */,
+				700C883115440F990028F974 /* cloud_partial@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
