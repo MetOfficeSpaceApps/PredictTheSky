@@ -41,6 +41,8 @@
 		700C882F15440F990028F974 /* cloud_obscured@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882715440F990028F974 /* cloud_obscured@2x.png */; };
 		700C883015440F990028F974 /* cloud_partial.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882815440F990028F974 /* cloud_partial.png */; };
 		700C883115440F990028F974 /* cloud_partial@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 700C882915440F990028F974 /* cloud_partial@2x.png */; };
+		700C8834154411070028F974 /* meteorshower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C8832154411070028F974 /* meteorshower.jpg */; };
+		700C8835154411070028F974 /* meteorshower@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 700C8833154411070028F974 /* meteorshower@2x.jpg */; };
 		70C567201542EC8600965BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5671F1542EC8600965BFC /* UIKit.framework */; };
 		70C567221542EC8600965BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567211542EC8600965BFC /* Foundation.framework */; };
 		70C567241542EC8600965BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C567231542EC8600965BFC /* CoreGraphics.framework */; };
@@ -100,6 +102,8 @@
 		700C882715440F990028F974 /* cloud_obscured@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_obscured@2x.png"; sourceTree = "<group>"; };
 		700C882815440F990028F974 /* cloud_partial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud_partial.png; sourceTree = "<group>"; };
 		700C882915440F990028F974 /* cloud_partial@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud_partial@2x.png"; sourceTree = "<group>"; };
+		700C8832154411070028F974 /* meteorshower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meteorshower.jpg; sourceTree = "<group>"; };
+		700C8833154411070028F974 /* meteorshower@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meteorshower@2x.jpg"; sourceTree = "<group>"; };
 		70C5671B1542EC8500965BFC /* PredictTheSky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictTheSky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C5671F1542EC8600965BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		70C567211542EC8600965BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +161,8 @@
 				700C87F7154385730028F974 /* aurora.jpg */,
 				700C87F8154385730028F974 /* aurora@2x.jpg */,
 				700C87F9154385730028F974 /* hubble.jpg */,
+				700C8832154411070028F974 /* meteorshower.jpg */,
+				700C8833154411070028F974 /* meteorshower@2x.jpg */,
 				700C87FA154385730028F974 /* hubble@2x.jpg */,
 				700C87E015435C930028F974 /* iss.jpg */,
 				700C87E115435C930028F974 /* iss@2x.jpg */,
@@ -396,6 +402,8 @@
 				700C882F15440F990028F974 /* cloud_obscured@2x.png in Resources */,
 				700C883015440F990028F974 /* cloud_partial.png in Resources */,
 				700C883115440F990028F974 /* cloud_partial@2x.png in Resources */,
+				700C8834154411070028F974 /* meteorshower.jpg in Resources */,
+				700C8835154411070028F974 /* meteorshower@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
