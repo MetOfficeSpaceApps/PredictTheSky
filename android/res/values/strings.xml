@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PredictTheSky</string>
+    <string name="default_next_events">Upcoming events in your area..</string>
+    <string name="overlay">\n\n8pm tonight\nAurora\nScattered Showers</string>
+    <string name="backdrop_alt">backdrop</string>
+    <string-array name="credits">
+        <item >http://thenounproject.com/noun/geolocation/</item>
+    </string-array>
+        <string name="weather_icon">weather icon</string>
+        <string name="thenounproject_credits">Icons http://thenounproject.com/noun/geolocation/\\n</string>
+
+</resources>
