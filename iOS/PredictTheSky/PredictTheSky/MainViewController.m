@@ -15,11 +15,19 @@
 @implementation MainViewController
 
 @synthesize tableView = _tableView;
+@synthesize locationManager = _locationManager;
+
 @synthesize nextEvent = _nextEvent;
 @synthesize nextEventObject = _nextEventPlace;
 @synthesize nextEventViewPeriod = _nextEventViewPeriod;
 @synthesize nextEventConditions = _nextEventConditions;
 @synthesize otherEvents = _otherEvents;
+
+#pragma mark View Lifecycle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self startMonitoringLocationUpdates];
+}
 
 #pragma mark UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,6 +69,89 @@
         
         aboutVC.delegate = self;
     }
+}
+
+#pragma mark Location Services
+- (void)startMonitoringLocationUpdates
+{
+    if (nil == self.locationManager)
+        self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    self.locationManager.distanceFilter = 500;
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    #if DEBUG
+    NSLog(@"New Location: %@", newLocation);
+    #endif
+    
+    [self fetchNextClearSkyEventWithLocation:newLocation];
+    [self fetchNextSkyEventsWithLocation:newLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    #if DEBUG
+    NSLog(@"Failed with Error: %@", error);
+    #endif
+    
+    static BOOL warning_shown;
+    
+    if (!warning_shown) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Locate" message:@"You need to enable Location Services to locate the device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        warning_shown = YES;
+        [alert show];
+    }
+}
+
+#pragma mark Web Service Integration
+- (void)fetchNextClearSkyEventWithLocation:(CLLocation *)location
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.adamretter.org.uk/spaceapps/space.xql?lat=%f&lng=%f&format=json&nextClear=true", location.coordinate.latitude, location.coordinate.longitude]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        NSDictionary *json = (NSDictionary *)JSON;
+        
+        #ifdef DEBUG
+        NSLog(@"Response: %@", JSON);
+        #endif
+        
+        if ([json objectForKey:@"none"]) {
+            #ifdef DEBUG
+            NSLog(@"No clear sky events existed.");
+            #endif
+            return;
+        }
+        
+    } failure:nil];
+    
+    [operation start];
+}
+
+- (void)fetchNextSkyEventsWithLocation:(CLLocation *)location
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.adamretter.org.uk/spaceapps/space.xql?lat=%f&lng=%f&format=json", location.coordinate.latitude, location.coordinate.longitude]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        #ifdef DEBUG
+        //NSLog(@"Response: %@", JSON);
+        #endif
+        
+    } failure:nil];
+    
+    [operation start];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -14,9 +14,10 @@
 
 @end
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : UIViewController <UIWebViewDelegate>
 
 @property (strong) id<AboutViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 - (IBAction)doneButton:(id)sender;
 
