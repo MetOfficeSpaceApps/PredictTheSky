@@ -215,6 +215,7 @@ def JulianDay (year, month, day, hour):
     '''
     COMPUTES THE JULIAN DATE (JD) GIVEN A GREGORIAN CALENDAR
     DATE (YEAR,MONTH,DAY).
+    Taken from http://aa.usno.navy.mil/faq/docs/JD_Formula.php
     '''
 
     #I= float(year)
@@ -228,7 +229,12 @@ def JulianDay (year, month, day, hour):
     UT = hour
     JD = 	367.0*K - float(int((7.0*(K+float(int((M+9)/12))))/4.0  ) ) + float(int((275*M)/9)) + I + 1721013.5 + UT/24.0 - 0.5 * getsign( 100.0*K+M-190002.5 ) + 0.5
     return JD
+
 def GMST(year, month, day, hour):
+    '''
+    Calculate the greenwich approximate sidereal time
+    Taken from http://aa.usno.navy.mil/faq/docs/GAST.php
+    '''
     JD = JulianDay (year, month, day, hour)
     JD0 = JulianDay (year, month, day, 0)
     H = (JD-JD0)*24.0
