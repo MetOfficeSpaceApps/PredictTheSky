@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-
+
         <ImageView
             android:id="@+id/mainBackdrop"
             android:layout_width="wrap_content"
@@ -16,46 +16,44 @@
             android:layout_alignParentTop="true"
             android:contentDescription="@string/backdrop_alt"
             android:scaleType="center"
-            android:src="@drawable/aurora_photo" />
-
+            android:src="@drawable/aurora_photo" />
         <TextView
             android:id="@+id/overlayText"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="150dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/overlayIcon"
             android:background="@color/smokyglass"
             android:text="@string/overlay"
-            android:textColor="@color/white" />
-
+            android:textColor="@color/white" />
         <ImageView
             android:id="@+id/overlayIcon"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/overlayText"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@color/smokyglass"
             android:contentDescription="@string/backdrop_alt"
-            android:src="@drawable/ic_launcher" />
+            android:scaleType="centerInside"
+            android:src="@drawable/rain" />
 
     </RelativeLayout>
-
+
     <TextView
         android:id="@+id/OtherEventsText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/smokyglass"
+        android:fadingEdge="vertical"
         android:text="@string/default_next_events"
         android:textColor="@color/white" />
-
+
     <ListView
         android:id="@+id/nextEventsList"
         android:layout_width="fill_parent"
-        android:layout_height="194dp" >
-
-        <!-- Preview: listitem=@android:layout/simple_list_item_1 -->
-
+        android:layout_height="194dp"
+        android:smoothScrollbar="true" >
+        <!-- Preview: listitem=@android:layout/simple_expandable_list_item_1 -->
     </ListView>
-
 </LinearLayout>
