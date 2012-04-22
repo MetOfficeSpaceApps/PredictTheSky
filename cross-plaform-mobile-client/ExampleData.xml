@@ -1,0 +1,48 @@
+<events>
+    <event>
+        <title>International Space Station</title>
+        <start>
+            <time>2012-04-21T20:02:49Z</time>
+            <alt>10.0</alt>
+            <az>292.5</az>
+        </start>
+        <end>
+            <time>2012-04-21T20:09:17Z</time>
+            <alt>10.0</alt>
+            <az>90.0</az>
+        </end>
+        <weather>
+            <simple>
+                <description>Clear Sky</description>
+            </simple>
+            <metOffice>
+                <chanceOfRain unit="%">-99</chanceOfRain>
+                <temperature unit="C">10</temperature>
+                <feelsLikeTemperature unit="C">7</feelsLikeTemperature>
+            </metOffice>
+        </weather>
+    </event>
+    <event>
+        <title>International Space Station</title>
+        <start>
+            <time>2012-04-21T21:39:09Z</time>
+            <alt>10.0</alt>
+            <az>270.0</az>
+        </start>
+        <end>
+            <time>2012-04-21T21:41:44Z</time>
+            <alt>31.0</alt>
+            <az>225.0</az>
+        </end>
+        <weather>
+            <simple>
+                <description>Clear Sky</description>
+            </simple>
+            <metOffice>
+                <chanceOfRain unit="%">-99</chanceOfRain>
+                <temperature unit="C">8</temperature>
+                <feelsLikeTemperature unit="C">5</feelsLikeTemperature>
+            </metOffice>
+        </weather>
+    </event>
+</events>
