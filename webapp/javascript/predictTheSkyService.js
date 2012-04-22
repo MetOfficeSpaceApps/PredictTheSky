@@ -17,9 +17,13 @@ function getNextEventAndWeather(latitude, longitude) {
         success: function (data, textStatus, jqXHR) {
             var obj = jQuery.parseJSON(jqXHR.responseText);
             var eventTitle = data.event.title;
-            var eventStart = data.event.start.time;
-            var eventEnd = data.event.end.time;
-            $("#nextEventDiv").html("Next event: " + eventTitle + "- from " + eventStart + " to " + eventEnd );
+            var eventStartTime = new Date(Date.parse(data.event.start.time));
+            var eventEndTime = new Date(Date.parse(data.event.end.time));
+            var eventDateString = eventStartTime.toDateString();
+            var eventStartString = eventStartTime.toTimeString();
+            var eventEndString =   eventEndTime.toTimeString()
+            $("#nextEventDiv").html("Next event: " + eventTitle + " - " + eventDateString
+                + " from " + eventStartString + " to " + eventEndString);
 
         },
         error: function (xhr, ajaxOptions, thrownError) {
