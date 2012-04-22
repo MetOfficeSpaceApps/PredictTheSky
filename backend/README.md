@@ -8,19 +8,19 @@ The code here consists of a database backup which can be imported into eXist-db.
 The parameters are provided in the QueryString of the URL. The parameters that you can use are:
 
 * lat
-The latitude of the location to check, e.g. 50.7218
+> The latitude of the location to check, e.g. 50.7218
 
 * lng
-The longitude of the location to check, e.g. -3.5336
+> The longitude of the location to check, e.g. -3.5336
 
 * format
-The format to return the data from the API in, valid values are 'json' or 'xml'.Default is XML if the parameter is omitted.
+> The format to return the data from the API in, valid values are 'json' or 'xml'.Default is XML if the parameter is omitted.
 
-** jsonp
-If the format parameter is set to 'json', you may also wish to set the json parameter to a function name, in this way the JSON output will be wrapped as JSON-P and you may invoke the named function from your own javascript.
+> * jsonp
+>> If the format parameter is set to 'json', you may also wish to set the json parameter to a function name, in this way the JSON output will be wrapped as JSON-P and you may invoke the named function from your own javascript.
 
 * nextClear
-The nextClear parameter may be set to 'true' or 'false'. If set to true then only the next Clear Sky Event will be returned. The default is false.
+> The nextClear parameter may be set to 'true' or 'false'. If set to true then only the next Clear Sky Event will be returned. The default is false.
 
 Example
 -------
