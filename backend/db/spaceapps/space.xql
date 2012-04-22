@@ -17,15 +17,25 @@ declare namespace uhaapi = "http://uhaapi";
 declare namespace space = "http://spaceapps";
 
 declare variable $met:api-key := "43d21b62-90a1-435f-8c56-534e204a3b74";
-declare variable $space:spaceapps-collection := "/db/adamretter.org.uk/spaceapps";
+declare variable $space:spaceapps-collection := "/db/spaceapps";
 
 declare function uhaapi:get-satelite($usspacecom-id, $lat, $lng) {
+    (: temp hard coded to exeter:)
+    doc(concat($space:spaceapps-collection, "/ha/iss.xml"))
+    
+    (: TODO should be extracted from this table - http://heavens-above.com/PassSummary.aspx?showAll=x&satid=25544&lat=50.7218&lng=-3.5336&loc=Unspecified&alt=0&tz=CET
+        but http:client seems to fail to retrieve whereas browser is okay!
+    :)
+    
+    (:
     let $url := concat("http://api.uhaapi.com/satellites/", $usspacecom-id, "/passes?lat=", $lat, "&amp;lng=", $lng) return
         http:send-request(
             <http:request method="get" href="{$url}">
                 <http:header name="Accept" value="application/xml"/>
             </http:request>
         )[2]
+    :)
+    
 };
 
 declare function met:get-weather($api-key, $lat, $lng) {
@@ -70,6 +80,7 @@ let $lat := request:get-parameter("lat", "50.7218"),
 $lng := request:get-parameter("lng", "-3.5336"),
 $format := request:get-parameter("format", "xml"),
 $jsonp := request:get-parameter("jsonp", ()),
+$nextClear := request:get-parameter("nextClear", "false"),
 
 $null := util:declare-option(
     "exist:serialize",
@@ -97,15 +108,51 @@ $null := util:declare-option(
             <events>
                 <location continent="{lower-case($met-weather//Location/@continent)}" country="{lower-case($met-weather//Location/@country)}" name="{lower-case($met-weather//Location/@name)}" lon="{$met-weather//Location/@lon}" lat="{$met-weather//Location/@lat}"/>
                 {
-                    for $pass in $sattelites-xml//pass
-                    order by xs:dateTime($pass/start/time) return
-                        <event>
-                            <title>{$sattelites/satelite[@id eq $pass/parent::satellite_passes/@id]/text()}</title>
-                            {
-                                $pass/start,
-                                $pass/end,
-                                space:simplify-weather-for-event($met-weather, xs:dateTime($pass/start/time))
-                            }
-                        </event>
+                    let $events := for $pass in $sattelites-xml//pass
+                        order by xs:dateTime($pass/start/time) return
+                            <event>
+                                <title>{$sattelites/satelite[@id eq $pass/parent::satellite_passes/@id]/text()}</title>
+                                {
+                                    $pass/start,
+                                    $pass/end,
+                                    space:simplify-weather-for-event($met-weather, xs:dateTime(adjust-dateTime-to-timezone($pass/start/time, "PT0H")))
+                                }
+                            </event>
+                    return
+                        if($nextClear eq "true") then
+                        
+                            (: TODO temp hardcoded due to bug in eXist-db in-memory nodes :)
+                            (: let $nextClearEvent := $events[weather/simple/description eq "Clear Sky"] return :)
+                            let $nextClearEvent := <event>
+                                <title>International Space Station</title>
+                                <start>
+                                    <time>2012-04-24T22:26:09+01:00</time>
+                                    <alt>10</alt>
+                                    <az>W</az>
+                                </start>
+                                <end>
+                                    <time>2012-04-24T22:31:29+01:00</time>
+                                    <alt>14</alt>
+                                    <az>SSE</az>
+                                </end>
+                                <weather>
+                                    <simple>
+                                        <description>Clear Sky</description>
+                                    </simple>
+                                    <metOffice>
+                                        <chanceOfRain unit="%">-99</chanceOfRain>
+                                        <temperature unit="C">7</temperature>
+                                        <feelsLikeTemperature unit="C">4</feelsLikeTemperature>
+                                    </metOffice>
+                                </weather>
+                           </event> return 
+                        
+                            
+                                if(not(empty($nextClearEvent)))then
+                                    $nextClearEvent
+                                else
+                                    <none>No Clear Sky Events Upcoming</none>
+                        else
+                            $events
                 }
             </events>
