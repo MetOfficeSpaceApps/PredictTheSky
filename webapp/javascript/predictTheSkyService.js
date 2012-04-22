@@ -17,11 +17,13 @@ function getNextEventAndWeather(latitude, longitude) {
             var obj = jQuery.parseJSON(jqXHR.responseText);
             alert("data returned");
         },
-        error: function (data, textStatus, jqXHR) {
-            alert("Problem returning data") }
-    });
+        error: function (xhr, ajaxOptions, thrownError) {
+            alert(xhr.statusText);
+            alert(thrownError);
+        }
+     });
 
-    $.getJSON(urlForThisLocation, function(result) {
-        alert("Got event data back");
-    } )
+//    $.getJSON(urlForThisLocation, function(result) {
+//        alert("Got event data back");
+//    } )
 }
