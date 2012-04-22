@@ -6,7 +6,7 @@ _an iOS client for Predict the Sky._
 
 ## Dependencies
 
-_none, so far_
+[AFNetworking](https://github.com/AFNetworking/AFNetworking). Submodule in Libraries/.
 
 ## Author / License
 
