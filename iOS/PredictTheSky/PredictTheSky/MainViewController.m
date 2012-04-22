@@ -90,6 +90,7 @@
     NSLog(@"New Location: %@", newLocation);
     #endif
     
+    [self fetchNextClearSkyEventWithLocation:newLocation];
     [self fetchNextSkyEventsWithLocation:newLocation];
 }
 
@@ -112,7 +113,28 @@
 #pragma mark Web Service Integration
 - (void)fetchNextClearSkyEventWithLocation:(CLLocation *)location
 {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.adamretter.org.uk/spaceapps/space.xql?lat=%f&lng=%f&format=json&nextClear=true", location.coordinate.latitude, location.coordinate.longitude]];
     
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        
+        NSDictionary *json = (NSDictionary *)JSON;
+        
+        #ifdef DEBUG
+        NSLog(@"Response: %@", JSON);
+        #endif
+        
+        if ([json objectForKey:@"none"]) {
+            #ifdef DEBUG
+            NSLog(@"No clear sky events existed.");
+            #endif
+            return;
+        }
+        
+    } failure:nil];
+    
+    [operation start];
 }
 
 - (void)fetchNextSkyEventsWithLocation:(CLLocation *)location
@@ -124,7 +146,7 @@
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         
         #ifdef DEBUG
-        NSLog(@"Response: %@", JSON);
+        //NSLog(@"Response: %@", JSON);
         #endif
         
     } failure:nil];
