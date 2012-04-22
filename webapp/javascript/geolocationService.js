@@ -44,24 +44,27 @@ function getStreetAddress(latitude, longitude) {
 }
 
 function locateFail(geoPositionError) {
+
+    var defaultMessage = ", defaulting to Exeter"
+
     switch (geoPositionError.code) {
         case 0: // UNKNOWN_ERROR
-            alert('An unknown error occurred, sorry');
+            alert('An unknown error occurred, sorry' + defaultMessage);
             break;
         case 1: // PERMISSION_DENIED
-            alert('Permission to use Geolocation was denied');
+            alert('Permission to use Geolocation was denied' + defaultMessage );
             break;
         case 2: // POSITION_UNAVAILABLE
-            alert('Couldn\'t find you...');
+            alert('Couldn\'t find you...' + defaultMessage);
             break;
         case 3: // TIMEOUT
-            alert('The Geolocation request took too long and timed out');
+            alert('The Geolocation request took too long and timed out' + defaultMessage);
             break;
         default:
 
     }
-//    latitude = 50.727;
-//    longitude = -3.4749;
-//    getStreetAddress(latitude, longitude);
+    latitude = 50.727;
+    longitude = -3.4749;
+    getStreetAddress(latitude, longitude);
 }
 
