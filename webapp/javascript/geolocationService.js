@@ -25,6 +25,20 @@ function locateSuccess(position) {
     onLocationSet(latitude, longitude);
 }
 
+function findLocation(locationSearchString) {
+    var locationSearchUrl = "http://nominatim.openstreetmap.org/search?format=json&q=searchString&countrycodes=gb";
+    var urlForThisSearchString = locationSearchUrl.replace("searchString", locationSearchString);
+    $.getJSON(urlForThisSearchString, function(result) {
+        latitude = result[0].lat;
+        longitude = result[0].lon;
+        $("#citySearchDiv").hide();
+        $("#locationDiv").show();
+        onLocationSet(latitude, longitude);
+
+    });
+
+}
+
 function getStreetAddress(latitude, longitude) {
     var reverseGeocodeUrl = "http://nominatim.openstreetmap.org/reverse?format=json&lat=latitude&lon=longitude&zoom=18&addressdetails=1"
     var urlForThisPosition = reverseGeocodeUrl.replace("latitude", latitude).replace("longitude", longitude);

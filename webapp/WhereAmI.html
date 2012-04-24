@@ -17,11 +17,13 @@
             display: inline;
         }
 
-        #locationDiv {
+        .topRightElement {
             position: fixed;
             right: 20px;
             top: 20px;
         }
+
+
 
         .inlineElement {
             display: inline;
@@ -31,11 +33,17 @@
 </head>
 <body>
 <img src="images/predictTheSkyLogo.jpg"/>
-<div id="locationDiv">
+<div id="locationDiv" class="topRightElement">
     Current location:
     <div id="cityLocationDiv" class="inlineElement">finding you...</div>
-    <button>Change</button>
+    <button id="changeLocationButton">Change</button>
 </div>
+<div id="citySearchDiv" class="topRightElement">
+    <label>Search for location: </label>
+    <input id="citySearchInput" type="text" name="searchCityInput" name="searchCity"/>
+    <button id="citySearchButton" disabled="true">Search</button>
+</div>
+
 <div id="nextEventDiv" class="inlineElement"></div>
 </body>
 </html>
