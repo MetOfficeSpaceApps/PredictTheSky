@@ -29,6 +29,8 @@ function findLocation(locationSearchString) {
     var locationSearchUrl = "http://nominatim.openstreetmap.org/search?format=json&q=searchString&countrycodes=gb";
     var urlForThisSearchString = locationSearchUrl.replace("searchString", locationSearchString);
     $.getJSON(urlForThisSearchString, function(result) {
+        // TO-DO - this just accepts the first hit at the moment, would be better to present the list of matches to
+        // the user
         latitude = result[0].lat;
         longitude = result[0].lon;
         $("#citySearchDiv").hide();
