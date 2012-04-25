@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eventInfoContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="true" >
+
+    <ImageView
+        android:id="@+id/eventInfoWeatherIcon"
+        android:layout_width="25dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:contentDescription="@string/weather_icon_alt"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:layout_width="182dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/eventInfoTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/eventInfoTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/grey" />
+
+        <TextView
+            android:id="@+id/eventInfoWeatherText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/grey" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/eventInfoPromptImage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:contentDescription="@string/nextEvent_alt"
+        android:scaleType="center"
+        android:src="@android:drawable/ic_dialog_info" />
+
+</LinearLayout>
