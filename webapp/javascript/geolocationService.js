@@ -3,11 +3,11 @@
  * User: angela.relle
  * Date: 21/04/12
  * Time: 15:19
- * To change this template use File | Settings | File Templates.
- */
+  */
 
 var latitude;
 var longitude;
+var currentPosition;
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -18,10 +18,27 @@ function getLocation() {
 }
 
 function locateSuccess(position) {
+    currentPosition = position;
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
     // Now try to get information about where we're to
-    getStreetAddress(latitude, longitude);
+    onLocationSet(latitude, longitude);
+}
+
+function findLocation(locationSearchString) {
+    var locationSearchUrl = "http://nominatim.openstreetmap.org/search?format=json&q=searchString&countrycodes=gb";
+    var urlForThisSearchString = locationSearchUrl.replace("searchString", locationSearchString);
+    $.getJSON(urlForThisSearchString, function(result) {
+        // TO-DO - this just accepts the first hit at the moment, would be better to present the list of matches to
+        // the user
+        latitude = result[0].lat;
+        longitude = result[0].lon;
+        $("#citySearchDiv").hide();
+        $("#locationDiv").show();
+        onLocationSet(latitude, longitude);
+
+    });
+
 }
 
 function getStreetAddress(latitude, longitude) {
@@ -38,30 +55,38 @@ function getStreetAddress(latitude, longitude) {
                 locationMessage = country;
             }
         }
-        $("#findEventsButton").show();
-        $("#locationDiv").html(locationMessage);
+        $("#cityLocationDiv").html(locationMessage);
     });
 }
 
 function locateFail(geoPositionError) {
+
+    var defaultMessage = ", defaulting to Exeter"
+
     switch (geoPositionError.code) {
         case 0: // UNKNOWN_ERROR
-            alert('An unknown error occurred, sorry');
+            alert('An unknown error occurred, sorry' + defaultMessage);
             break;
         case 1: // PERMISSION_DENIED
-            alert('Permission to use Geolocation was denied');
+            alert('Permission to use Geolocation was denied' + defaultMessage );
             break;
         case 2: // POSITION_UNAVAILABLE
-            alert('Couldn\'t find you...');
+            alert('Couldn\'t find you...' + defaultMessage);
             break;
         case 3: // TIMEOUT
-            alert('The Geolocation request took too long and timed out');
+            alert('The Geolocation request took too long and timed out' + defaultMessage);
             break;
         default:
 
     }
     latitude = 50.727;
     longitude = -3.4749;
-    getStreetAddress(latitude, longitude);
+    onLocationSet(latitude, longitude);
+}
+
+function onLocationSet(latitude, longitude) {
+    getStreetAddress(latitude, longitude)
+    $("#nextEventDiv").html("Getting next event information...")
+    getNextEventAndWeather(latitude, longitude);
 }
 
