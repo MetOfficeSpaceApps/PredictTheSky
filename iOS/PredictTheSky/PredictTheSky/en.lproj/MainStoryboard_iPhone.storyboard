@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Qfp-pl-mHm">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -255,7 +254,7 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="heavy_rain.png" id="qus-6E-uKl">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cloud_obscured.png" id="qus-6E-uKl">
                                                 <rect key="frame" x="10" y="0.0" width="78" height="78"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -279,6 +278,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cloud_obscured.png" width="64" height="64"/>
         <image name="heavy_rain.png" width="78" height="78"/>
         <image name="iss.jpg" width="320" height="210"/>
     </resources>
