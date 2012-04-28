@@ -10,7 +10,7 @@
     <script>
         $( document ).delegate("#landingPage", "pageinit", function() {
             $("#desktopLink").click(function (){
-                $.cookie('use_desktop_version', 'true', { expires: 1, domain:'.dilkusha.co.uk'});
+                $.cookie('use_desktop_version', 'true', { expires: 1, domain:'.dilkusha.co.uk', path:'/'});
             });
 
         });
