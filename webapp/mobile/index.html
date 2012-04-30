@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict The Sky</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script src="javascript/jquery.cookie.js"></script>
+    <script>
+        $( document ).delegate("#landingPage", "pageinit", function() {
+            $("#desktopLink").click(function (){
+                $.cookie('use_desktop_version', 'true', { expires: 1, domain:'.dilkusha.co.uk', path:'/'});
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div data-role="page" data-theme="a" id="landingPage">
+    <div data-role="content">
+        <img style="width: 100%; height: 100%" src="http://www.dilkusha.co.uk/PredictTheSky/images/predictthesky.png" />
+    </div><!-- /content -->
+    <div data-role="footer">
+        <a id="desktopLink" href="http://www.dilkusha.co.uk/PredictTheSky/index.html" style="display: block; margin-left: auto; margin-right: auto;">Desktop version</a>
+    </div>
+
+</div><!-- /page -->
+
+</body>
+</html>
