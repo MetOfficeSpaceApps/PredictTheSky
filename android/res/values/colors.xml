@@ -3,5 +3,6 @@
     <color name="grey">#ff666666</color>
     <color name="frostedGlass">#88FFFFFF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
     
 </resources>

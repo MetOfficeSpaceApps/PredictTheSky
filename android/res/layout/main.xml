@@ -24,17 +24,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/nextVisibleText" />
-
+
         <TextView
             android:id="@+id/nextVisibleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:background="@color/frostedGlass"
+            android:background="@color/transparent"
             android:gravity="center_horizontal"
             android:text="@string/default_next_clear_event"
-            android:textColor="@color/grey" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 
