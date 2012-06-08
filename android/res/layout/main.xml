@@ -1,59 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:id="@+id/mainLayoutBackdrop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:weightSum="1.0" >
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+    <LinearLayout
+        android:id="@+id/nextClearEventParent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:gravity="center"
+        android:orientation="vertical" >
+    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/mainBackdrop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:contentDescription="@string/backdrop_alt"
-            android:scaleType="center"
-            android:src="@drawable/aurora_photo" />
-        <TextView
-            android:id="@+id/overlayText"
-            android:layout_width="fill_parent"
-            android:layout_height="150dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/overlayIcon"
-            android:background="@color/smokyglass"
-            android:text="@string/overlay"
-            android:textColor="@color/white" />
-        <ImageView
-            android:id="@+id/overlayIcon"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/overlayText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@color/smokyglass"
-            android:contentDescription="@string/backdrop_alt"
-            android:scaleType="centerInside"
-            android:src="@drawable/rain" />
+    <fragment
+        android:name="com.predictthesky.app.fragments.NextEventList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6" />
 
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/OtherEventsText"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/smokyglass"
-        android:fadingEdge="vertical"
-        android:text="@string/default_next_events"
-        android:textColor="@color/white" />
-
-    <ListView
-        android:id="@+id/nextEventsList"
-        android:layout_width="fill_parent"
-        android:layout_height="194dp"
-        android:smoothScrollbar="true" >
-        <!-- Preview: listitem=@android:layout/simple_expandable_list_item_1 -->
-    </ListView>
 </LinearLayout>
