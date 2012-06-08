@@ -1,80 +1,74 @@
 package com.predictthesky.app.fragments;
 
-import java.util.ArrayList;
-
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.predictthesky.app.Event;
 import com.predictthesky.app.R;
+import com.predictthesky.app.Updater;
 
 public class NextEventList extends ListFragment
 {
 
-    ArrayList<Event> eventData;
-
-    public NextEventList(ArrayList<Event> data)
-    {
-        eventData = data;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState)
+    public void onActivityCreated(Bundle savedInstanceState)
     {
-
-        ArrayAdapter<Event> adapter = new Adapter(getActivity(), eventData);
+        Adapter adapter = new Adapter(getActivity());
         setListAdapter(adapter);
 
-        super.onCreate(savedInstanceState);
-    }
+        getListView().setLayoutAnimation(
+                new LayoutAnimationController(AnimationUtils.loadAnimation(getActivity(), R.anim.add_list_item)));
 
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id)
-    {
-        super.onListItemClick(l, v, position, id);
+        Updater updater = new Updater();
+        updater.update(getActivity(), adapter, false);
 
-        Event event = (Event) l.getAdapter().getItem(position);
-
-        // Open in details view
-        Toast.makeText(getActivity(), event.title, Toast.LENGTH_SHORT).show();
+        super.onActivityCreated(savedInstanceState);
     }
 
     private class Adapter extends ArrayAdapter<Event>
     {
 
-        public Adapter(Context context, ArrayList<Event> data)
+        public Adapter(Context context)
         {
-            super(context, R.layout.nextevent_info, data);
+            super(context, R.layout.nextevent_info);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent)
         {
-            View eventView = convertView;
+            View row = convertView;
+            Event e = null;
 
-            if (eventView == null)
+            if (row == null)
             {
-                LayoutInflater inflater = getLayoutInflater(null);
-                eventView = inflater.inflate(R.layout.nextevent_info, parent);
+                LayoutInflater inflater = ((Activity) getActivity()).getLayoutInflater();
+                row = inflater.inflate(R.layout.nextevent_info, parent, false);
+
+                e = getItem(position);
+
+                row.setTag(e);
+            }
+            else
+            {
+                e = (Event) row.getTag();
             }
 
-            Event e = getItem(position); // Event to add to the list
+            ((TextView) row.findViewById(R.id.nextEventInfo_eventTitle)).setText(e.title);
+            ((TextView) row.findViewById(R.id.nextEventInfo_eventTime)).setText(e.time);
+            ((TextView) row.findViewById(R.id.nextEventInfo_eventWeather)).setText(e.weather);
+            ((ImageView) row.findViewById(R.id.nextEventInfo_eventWeatherIcon)).setImageResource(e.weatherIcon);
 
-            ((TextView) eventView.findViewById(R.id.nextEventInfo_eventTitle)).setText(e.title);
-            ((TextView) eventView.findViewById(R.id.nextEventInfo_eventWeather)).setText(e.weather);
-            ((TextView) eventView.findViewById(R.id.nextEventInfo_eventTime)).setText(e.time);
-            ((ImageView) eventView.findViewById(R.id.nextEventInfo_eventWeatherIcon)).setImageResource(e.weatherIcon);
-
-            return eventView;
+            return row;
         }
     }
 

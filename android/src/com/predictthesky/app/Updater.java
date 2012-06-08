@@ -1,17 +1,9 @@
 package com.predictthesky.app;
 
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.widget.ArrayAdapter;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -20,19 +12,19 @@ import org.xml.sax.helpers.DefaultHandler;
 public class Updater
 {
 
-    public void update(Context ctx, ArrayList<Event> dataOutput, Boolean getNextClearEvent)
+    public void update(Context ctx, ArrayAdapter<Event> adapter, Boolean getNextClearEvent)
     {
-        (new Task(dataOutput, getNextClearEvent, ctx.getResources())).execute();
+        (new Task(adapter, getNextClearEvent, ctx.getResources())).execute();
     }
 
     private class Task extends AsyncTask<Void, Void, Void>
     {
 
-        ArrayList<Event> output;
-        Boolean          loadNextClear;
-        Resources        res;
+        ArrayAdapter<Event> output;
+        Boolean             loadNextClear;
+        Resources           res;
 
-        public Task(ArrayList<Event> adapter, Boolean nextClear, Resources resources)
+        public Task(ArrayAdapter<Event> adapter, Boolean nextClear, Resources resources)
         {
             output = adapter;
             loadNextClear = nextClear;
@@ -61,27 +53,48 @@ public class Updater
                  * nextClear - The nextClear parameter may be set to 'true' or 'false'. If set to true then only the
                  * next Clear Sky Event will be returned. The default is false.
                  */
-                String data = URLEncoder.encode("lat", "UTF-8") + "=" + URLEncoder.encode("", "UTF-8");
-                data += "&" + URLEncoder.encode("lng", "UTF-8") + "=" + URLEncoder.encode("", "UTF-8");
-                data += "&" + URLEncoder.encode("format", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8");
-                data += "&" + URLEncoder.encode("nextClear", "UTF-8") + "="; // true/false
-                if (loadNextClear)
-                    data += URLEncoder.encode("true", "UTF-8");
-                else
-                    data += URLEncoder.encode("false", "UTF-8");
+                // String data = URLEncoder.encode("lat", "UTF-8") + "=" + URLEncoder.encode("50", "UTF-8");
+                // data += "&" + URLEncoder.encode("lng", "UTF-8") + "=" + URLEncoder.encode("-3", "UTF-8");
+                // data += "&" + URLEncoder.encode("format", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8");
+                // data += "&" + URLEncoder.encode("nextClear", "UTF-8") + "="; // true/false
+                // if (loadNextClear)
+                // data += URLEncoder.encode("true", "UTF-8");
+                // else
+                // data += URLEncoder.encode("false", "UTF-8");
+                //
+                // URL api = new URL("http://www.adamretter.org.uk/spaceapps/space.xql?");
+                // URLConnection conn = api.openConnection();
+                //
+                // conn.setDoInput(true);
+                // conn.setDoOutput(true);
+                // OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                // wr.write(data);
+                // wr.flush();
+                //
+                // SAXParserFactory factory = SAXParserFactory.newInstance();
+                // factory.setNamespaceAware(true);
+                // SAXParser parser = factory.newSAXParser();
+                //
+                // parser.parse(conn.getInputStream(), new SAXReaderRules(output));
 
-                URL api = new URL(res.getString(R.string.internal_remote_url));
-                URLConnection conn = api.openConnection();
+                Event e = new Event();
+                e.title = "TEST TEST TEST TEST TEST";
+                e.time = "0600 Sunday";
+                e.weather = "Cloudy";
+                e.weatherIcon = R.drawable.cloudy;
 
-                conn.setDoOutput(true);
-                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-                wr.write(data);
-                wr.flush();
-
-                SAXParserFactory factory = SAXParserFactory.newInstance();
-                factory.setNamespaceAware(true);
-                SAXParser parser = factory.newSAXParser();
-                parser.parse(conn.getInputStream(), new SAXReaderRules(output));
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
+                output.add(e);
             }
             catch (Exception e)
             {
@@ -95,17 +108,17 @@ public class Updater
         class SAXReaderRules extends DefaultHandler
         {
 
-            Event            eventToBuild;
-            ArrayList<Event> out;
+            Event               eventToBuild;
+            ArrayAdapter<Event> out;
 
             // Switches
-            Boolean          title      = false;
-            Boolean          eventStart = false;
-            Boolean          time       = false;
-            Boolean          alt        = false;
-            Boolean          az         = false;
+            Boolean             title      = false;
+            Boolean             eventStart = false;
+            Boolean             time       = false;
+            Boolean             alt        = false;
+            Boolean             az         = false;
 
-            public SAXReaderRules(ArrayList<Event> output)
+            public SAXReaderRules(ArrayAdapter<Event> output)
             {
                 out = output;
             }
@@ -170,10 +183,8 @@ public class Updater
             {
                 if (qName.equalsIgnoreCase("event"))
                 { // Event definition finished. Package it all up and ship it off ASAP.
-                    synchronized (out)
-                    {
-                        out.add(eventToBuild);
-                    }
+                    out.add(eventToBuild);
+                    out.notifyDataSetChanged();
                     eventToBuild = new Event(); // Refresh
                 }
                 else if (qName.equalsIgnoreCase("start"))
