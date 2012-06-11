@@ -1,5 +1,13 @@
 package com.predictthesky.app;
 
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
@@ -14,21 +22,21 @@ public class Updater
 
     public void update(Context ctx, ArrayAdapter<Event> adapter, Boolean getNextClearEvent)
     {
-        (new Task(adapter, getNextClearEvent, ctx.getResources())).execute();
+        (new Task(adapter, getNextClearEvent, ctx)).execute();
     }
 
-    private class Task extends AsyncTask<Void, Void, Void>
+    private class Task extends AsyncTask<Void, Event, Void>
     {
 
         ArrayAdapter<Event> output;
         Boolean             loadNextClear;
-        Resources           res;
+        Resources           mRes;
 
-        public Task(ArrayAdapter<Event> adapter, Boolean nextClear, Resources resources)
+        public Task(ArrayAdapter<Event> adapter, Boolean nextClear, Context ctx)
         {
             output = adapter;
             loadNextClear = nextClear;
-            res = resources;
+            mRes = ctx.getResources();
         }
 
         @Override
@@ -53,48 +61,31 @@ public class Updater
                  * nextClear - The nextClear parameter may be set to 'true' or 'false'. If set to true then only the
                  * next Clear Sky Event will be returned. The default is false.
                  */
-                // String data = URLEncoder.encode("lat", "UTF-8") + "=" + URLEncoder.encode("50", "UTF-8");
-                // data += "&" + URLEncoder.encode("lng", "UTF-8") + "=" + URLEncoder.encode("-3", "UTF-8");
-                // data += "&" + URLEncoder.encode("format", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8");
-                // data += "&" + URLEncoder.encode("nextClear", "UTF-8") + "="; // true/false
-                // if (loadNextClear)
-                // data += URLEncoder.encode("true", "UTF-8");
-                // else
-                // data += URLEncoder.encode("false", "UTF-8");
-                //
-                // URL api = new URL("http://www.adamretter.org.uk/spaceapps/space.xql?");
-                // URLConnection conn = api.openConnection();
-                //
-                // conn.setDoInput(true);
-                // conn.setDoOutput(true);
-                // OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-                // wr.write(data);
-                // wr.flush();
-                //
-                // SAXParserFactory factory = SAXParserFactory.newInstance();
-                // factory.setNamespaceAware(true);
-                // SAXParser parser = factory.newSAXParser();
-                //
-                // parser.parse(conn.getInputStream(), new SAXReaderRules(output));
+                String data = URLEncoder.encode("lat", "UTF-8") + "=" + URLEncoder.encode("50", "UTF-8");
+                data += "&" + URLEncoder.encode("lng", "UTF-8") + "=" + URLEncoder.encode("-3", "UTF-8");
+                data += "&" + URLEncoder.encode("format", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8");
+                data += "&" + URLEncoder.encode("nextClear", "UTF-8") + "="; // true/false
+                if (loadNextClear)
+                    data += URLEncoder.encode("true", "UTF-8");
+                else
+                    data += URLEncoder.encode("false", "UTF-8");
 
-                Event e = new Event();
-                e.title = "TEST TEST TEST TEST TEST";
-                e.time = "0600 Sunday";
-                e.weather = "Cloudy";
-                e.weatherIcon = R.drawable.cloudy;
+                URL api = new URL(mRes.getString(R.string.internal_remote_url));
+                URLConnection conn = api.openConnection();
 
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
-                output.add(e);
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                wr.write(data);
+                wr.flush();
+
+                SAXParserFactory factory = SAXParserFactory.newInstance();
+                factory.setNamespaceAware(true);
+                SAXParser parser = factory.newSAXParser();
+
+                SAXReaderRules rules = new SAXReaderRules();
+
+                parser.parse(conn.getInputStream(), rules);
             }
             catch (Exception e)
             {
@@ -108,19 +99,18 @@ public class Updater
         class SAXReaderRules extends DefaultHandler
         {
 
-            Event               eventToBuild;
-            ArrayAdapter<Event> out;
+            Event   eventToBuild;
 
             // Switches
-            Boolean             title      = false;
-            Boolean             eventStart = false;
-            Boolean             time       = false;
-            Boolean             alt        = false;
-            Boolean             az         = false;
+            Boolean title      = false;
+            Boolean eventStart = false;
+            Boolean time       = false;
+            Boolean alt        = false;
+            Boolean az         = false;
 
-            public SAXReaderRules(ArrayAdapter<Event> output)
+            public SAXReaderRules()
             {
-                out = output;
+                eventToBuild = new Event();
             }
 
             @Override
@@ -183,8 +173,7 @@ public class Updater
             {
                 if (qName.equalsIgnoreCase("event"))
                 { // Event definition finished. Package it all up and ship it off ASAP.
-                    out.add(eventToBuild);
-                    out.notifyDataSetChanged();
+                    publishProgress(eventToBuild);
                     eventToBuild = new Event(); // Refresh
                 }
                 else if (qName.equalsIgnoreCase("start"))
@@ -192,6 +181,18 @@ public class Updater
                     eventStart = false;
                 }
             }
+        }
+
+        @Override
+        protected void onProgressUpdate(Event... values)
+        {
+            output.add(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Void result)
+        {
+            output.notifyDataSetChanged();
         }
     }
 

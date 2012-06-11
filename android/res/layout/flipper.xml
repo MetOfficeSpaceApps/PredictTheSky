@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/flipper"
+    android:id="@+id/appViewFlipper"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <include
-        android:id="@+id/mainView"
-        layout="@layout/main" />
+    <include layout="@layout/main" />
 
-    <include
-        android:id="@+id/detailsView"
-        layout="@layout/details" />
+    <include layout="@layout/details" />
 
 </ViewFlipper>

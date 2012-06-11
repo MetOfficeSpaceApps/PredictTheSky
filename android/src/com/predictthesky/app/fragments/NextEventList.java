@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.predictthesky.app.Event;
@@ -20,19 +21,42 @@ import com.predictthesky.app.Updater;
 public class NextEventList extends ListFragment
 {
 
+    Adapter                 mAdapter;
+    onListItemClickListener clickListener;
+
+    @Override
+    public void onAttach(Activity activity)
+    {
+        mAdapter = new Adapter(activity);
+
+        try
+        {
+            clickListener = (onListItemClickListener) activity;
+        }
+        catch (ClassCastException e)
+        {
+            throw new ClassCastException(activity.toString() + " must implement onListItemClickListener");
+        }
+
+        super.onAttach(activity);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
-        Adapter adapter = new Adapter(getActivity());
-        setListAdapter(adapter);
+        super.onActivityCreated(savedInstanceState);
 
         getListView().setLayoutAnimation(
                 new LayoutAnimationController(AnimationUtils.loadAnimation(getActivity(), R.anim.add_list_item)));
 
-        Updater updater = new Updater();
-        updater.update(getActivity(), adapter, false);
-
-        super.onActivityCreated(savedInstanceState);
+        setListAdapter(mAdapter);
+        (new Updater()).update(getActivity(), mAdapter, false);
     }
 
     private class Adapter extends ArrayAdapter<Event>
@@ -40,7 +64,8 @@ public class NextEventList extends ListFragment
 
         public Adapter(Context context)
         {
-            super(context, R.layout.nextevent_info);
+            super(context, R.layout.nexteventlist_row);
+            setNotifyOnChange(false);
         }
 
         @Override
@@ -52,7 +77,7 @@ public class NextEventList extends ListFragment
             if (row == null)
             {
                 LayoutInflater inflater = ((Activity) getActivity()).getLayoutInflater();
-                row = inflater.inflate(R.layout.nextevent_info, parent, false);
+                row = inflater.inflate(R.layout.nexteventlist_row, parent, false);
 
                 e = getItem(position);
 
@@ -63,13 +88,25 @@ public class NextEventList extends ListFragment
                 e = (Event) row.getTag();
             }
 
-            ((TextView) row.findViewById(R.id.nextEventInfo_eventTitle)).setText(e.title);
-            ((TextView) row.findViewById(R.id.nextEventInfo_eventTime)).setText(e.time);
-            ((TextView) row.findViewById(R.id.nextEventInfo_eventWeather)).setText(e.weather);
-            ((ImageView) row.findViewById(R.id.nextEventInfo_eventWeatherIcon)).setImageResource(e.weatherIcon);
+            ((TextView) row.findViewById(R.id.nextEventList_Row_TitleText)).setText(e.title);
+            ((TextView) row.findViewById(R.id.nextEventList_Row_TimeText)).setText(e.time);
+            ((TextView) row.findViewById(R.id.nextEventList_Row_WeatherText)).setText("Cloudy");
+            ((ImageView) row.findViewById(R.id.nextEventList_Row_WeatherIcon)).setImageResource(R.drawable.cloudy);
 
             return row;
         }
+    }
+
+    public interface onListItemClickListener
+    {
+
+        public void onListItemClick();
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id)
+    {
+        clickListener.onListItemClick();
     }
 
 }

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/nextEventInfo_eventInfoLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="60dp"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:weightSum="1.0" >
 
     <ImageView
-        android:id="@+id/nextEventInfo_eventWeatherIcon"
-        android:layout_width="wrap_content"
+        android:id="@+id/nextEventList_Row_WeatherIcon"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_weight="0.2"
         android:contentDescription="@string/event_weather_icon"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -19,37 +20,34 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/nextEventInfo_eventTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@android:color/white" />
-
-        <TextView
-            android:id="@+id/nextEventInfo_eventWeather"
+        android:layout_weight="0.6"
+        android:orientation="vertical" ><TextView
+            android:id="@+id/nextEventList_Row_TitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/nextEventInfo_eventTime"
+            android:id="@+id/nextEventList_Row_WeatherText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/nextEventList_Row_TimeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/nextEventInfo_eventMoreInfo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:layout_weight="0.2"
         android:contentDescription="@string/more_info"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:src="@android:drawable/ic_dialog_info" />
+        android:src="@android:drawable/ic_media_play" />
 
 </LinearLayout>

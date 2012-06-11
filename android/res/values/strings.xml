@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Predict The Sky</string>
     <string name="event_weather_icon">Icon displaying the weather during the event</string>
     <string name="more_info">More information..</string>
-    <string name="internal_remote_url">http://www.adamretter.org.uk/spaceapps/space.xql</string>
-    <string name="internal_event_tag">event</string>
-    <string name="internal_title_tag">title</string>
-    <string name="internal_start_tag">start</string>
-    <string name="internal_time_tag">time</string>
-    <string name="internal_date_format"/>
+    <string name="upcoming_events">Other upcoming events</string>
 
 </resources>

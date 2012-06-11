@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="internal_remote_url">http://www.adamretter.org.uk/spaceapps/space.xql?</string>
+    <string name="internal_event_tag">event</string>
+    <string name="internal_title_tag">title</string>
+    <string name="internal_start_tag">start</string>
+    <string name="internal_time_tag">time</string>
+
+</resources>

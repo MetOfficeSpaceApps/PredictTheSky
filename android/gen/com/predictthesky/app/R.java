@@ -10,10 +10,10 @@ package com.predictthesky.app;
 public final class R {
     public static final class anim {
         public static final int add_list_item=0x7f040000;
-        public static final int slide_in_from_left=0x7f040001;
-        public static final int slide_in_from_right=0x7f040002;
-        public static final int slide_out_to_left=0x7f040003;
-        public static final int slide_out_to_right=0x7f040004;
+        public static final int slide_in_left=0x7f040001;
+        public static final int slide_in_right=0x7f040002;
+        public static final int slide_out_left=0x7f040003;
+        public static final int slide_out_right=0x7f040004;
     }
     public static final class attr {
     }
@@ -28,35 +28,47 @@ public final class R {
         public static final int iss=0x7f020004;
     }
     public static final class id {
-        public static final int detailsView=0x7f070003;
-        public static final int flipper=0x7f070001;
-        public static final int mainLayoutBackdrop=0x7f070004;
-        public static final int mainView=0x7f070002;
-        public static final int nextClearEventParent=0x7f070005;
-        public static final int nextEventInfo_eventInfoLayout=0x7f070006;
-        public static final int nextEventInfo_eventMoreInfo=0x7f07000b;
-        public static final int nextEventInfo_eventTime=0x7f07000a;
-        public static final int nextEventInfo_eventTitle=0x7f070008;
-        public static final int nextEventInfo_eventWeather=0x7f070009;
-        public static final int nextEventInfo_eventWeatherIcon=0x7f070007;
-        public static final int returnButton=0x7f070000;
+        public static final int appViewFlipper=0x7f070005;
+        public static final int button1=0x7f070003;
+        public static final int imageView1=0x7f070000;
+        public static final int mainEventView=0x7f070006;
+        public static final int nextClearEvent_Fragment=0x7f070009;
+        public static final int nextClearEvent_FragmentView=0x7f07000d;
+        public static final int nextClearEvent_Fragment_BackdropImage=0x7f07000e;
+        public static final int nextClearEvent_Fragment_TimeText=0x7f070012;
+        public static final int nextClearEvent_Fragment_TitleText=0x7f070010;
+        public static final int nextClearEvent_Fragment_WeatherIcon=0x7f07000f;
+        public static final int nextClearEvent_Fragment_WeatherText=0x7f070011;
+        public static final int nextClearEvent_Parent=0x7f070007;
+        public static final int nextClearEvent_Text=0x7f070008;
+        public static final int nextEventList_Fragment=0x7f07000c;
+        public static final int nextEventList_Parent=0x7f07000a;
+        public static final int nextEventList_Row_TimeText=0x7f070016;
+        public static final int nextEventList_Row_TitleText=0x7f070014;
+        public static final int nextEventList_Row_WeatherIcon=0x7f070013;
+        public static final int nextEventList_Row_WeatherText=0x7f070015;
+        public static final int nextEventList_Text=0x7f07000b;
+        public static final int ratingBar1=0x7f070004;
+        public static final int textView1=0x7f070001;
+        public static final int textView2=0x7f070002;
     }
     public static final class layout {
         public static final int details=0x7f030000;
         public static final int flipper=0x7f030001;
         public static final int main=0x7f030002;
-        public static final int nextevent_info=0x7f030003;
+        public static final int nextclearevent_fragment=0x7f030003;
+        public static final int nexteventlist_row=0x7f030004;
     }
     public static final class string {
-        public static final int app_name=0x7f060001;
-        public static final int event_weather_icon=0x7f060002;
+        public static final int app_name=0x7f060006;
+        public static final int event_weather_icon=0x7f060007;
         public static final int generic_content_description=0x7f060000;
-        public static final int internal_date_format=0x7f060009;
-        public static final int internal_event_tag=0x7f060005;
-        public static final int internal_remote_url=0x7f060004;
-        public static final int internal_start_tag=0x7f060007;
-        public static final int internal_time_tag=0x7f060008;
-        public static final int internal_title_tag=0x7f060006;
-        public static final int more_info=0x7f060003;
+        public static final int internal_event_tag=0x7f060002;
+        public static final int internal_remote_url=0x7f060001;
+        public static final int internal_start_tag=0x7f060004;
+        public static final int internal_time_tag=0x7f060005;
+        public static final int internal_title_tag=0x7f060003;
+        public static final int more_info=0x7f060008;
+        public static final int upcoming_events=0x7f060009;
     }
 }

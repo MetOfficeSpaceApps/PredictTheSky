@@ -1,25 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainLayoutBackdrop"
+    android:id="@+id/mainEventView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:orientation="vertical"
     android:weightSum="1.0" >
 
-    <LinearLayout
-        android:id="@+id/nextClearEventParent"
+    <RelativeLayout
+        android:id="@+id/nextClearEvent_Parent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
-        android:gravity="center"
-        android:orientation="vertical" >
-    </LinearLayout>
+        android:layout_weight="0.4" >
 
-    <fragment
-        android:name="com.predictthesky.app.fragments.NextEventList"
+        <TextView
+            android:id="@+id/nextClearEvent_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nextClearEvent_Parent"
+            android:gravity="center_horizontal"
+            android:text="@string/upcoming_events"
+            android:textColor="@android:color/white" />
+
+        <fragment
+            android:id="@+id/nextClearEvent_Fragment"
+            android:name="com.predictthesky.app.fragments.NextClearEvent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/nextClearEvent_Text" >
+
+            <!-- Preview: layout=@layout/nextclearevent_fragment -->
+        </fragment>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/nextEventList_Parent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.6" />
+        android:layout_weight="0.6" >
+
+        <TextView
+            android:id="@+id/nextEventList_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nextEventList_Parent"
+            android:gravity="center_horizontal"
+            android:text="@string/upcoming_events"
+            android:textColor="@android:color/white" />
+
+        <fragment
+            android:id="@+id/nextEventList_Fragment"
+            android:name="com.predictthesky.app.fragments.NextEventList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/nextEventList_Text" >
+
+            <!-- Preview: layout=@layout/nexteventlist_row -->
+
+        </fragment>
+    </RelativeLayout>
 
 </LinearLayout>
