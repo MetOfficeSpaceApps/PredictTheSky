@@ -8,67 +8,152 @@
 package com.predictthesky.app;
 
 public final class R {
-    public static final class anim {
-        public static final int add_list_item=0x7f040000;
-        public static final int slide_in_left=0x7f040001;
-        public static final int slide_in_right=0x7f040002;
-        public static final int slide_out_left=0x7f040003;
-        public static final int slide_out_right=0x7f040004;
+    public static final class array {
+        public static final int settings_visualstyle_listentries=0x7f070000;
+        public static final int settings_visualstyle_listkeys=0x7f070001;
     }
     public static final class attr {
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int actionbarIconLocate=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int actionbarIconRefresh=0x7f010000;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int loadingLocationSecondaryStatusText=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int themepreferenceStateIcon=0x7f010003;
     }
     public static final class color {
-        public static final int overlay=0x7f050000;
+        public static final int loadingLocationSecondaryStatusText_dark=0x7f050000;
+        public static final int loadingLocationSecondaryStatusText_light=0x7f050001;
+        public static final int transparent=0x7f050002;
     }
     public static final class drawable {
-        public static final int app_icon=0x7f020000;
-        public static final int aurora_photo=0x7f020001;
-        public static final int cloudy=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int iss=0x7f020004;
+        public static final int ic_action_locate_dark=0x7f020000;
+        public static final int ic_action_locate_light=0x7f020001;
+        public static final int ic_action_refresh_dark=0x7f020002;
+        public static final int ic_action_refresh_light=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int ic_settings_themeicon_dark=0x7f020005;
+        public static final int ic_settings_themeicon_light=0x7f020006;
     }
     public static final class id {
-        public static final int appViewFlipper=0x7f070005;
-        public static final int button1=0x7f070003;
-        public static final int imageView1=0x7f070000;
-        public static final int mainEventView=0x7f070006;
-        public static final int nextClearEvent_Fragment=0x7f070009;
-        public static final int nextClearEvent_FragmentView=0x7f07000d;
-        public static final int nextClearEvent_Fragment_BackdropImage=0x7f07000e;
-        public static final int nextClearEvent_Fragment_TimeText=0x7f070012;
-        public static final int nextClearEvent_Fragment_TitleText=0x7f070010;
-        public static final int nextClearEvent_Fragment_WeatherIcon=0x7f07000f;
-        public static final int nextClearEvent_Fragment_WeatherText=0x7f070011;
-        public static final int nextClearEvent_Parent=0x7f070007;
-        public static final int nextClearEvent_Text=0x7f070008;
-        public static final int nextEventList_Fragment=0x7f07000c;
-        public static final int nextEventList_Parent=0x7f07000a;
-        public static final int nextEventList_Row_TimeText=0x7f070016;
-        public static final int nextEventList_Row_TitleText=0x7f070014;
-        public static final int nextEventList_Row_WeatherIcon=0x7f070013;
-        public static final int nextEventList_Row_WeatherText=0x7f070015;
-        public static final int nextEventList_Text=0x7f07000b;
-        public static final int ratingBar1=0x7f070004;
-        public static final int textView1=0x7f070001;
-        public static final int textView2=0x7f070002;
+        public static final int actionbar_overflow_help=0x7f0a000d;
+        public static final int actionbar_overflow_settings=0x7f0a000c;
+        public static final int actionbar_updatedata=0x7f0a000a;
+        public static final int actionbar_updatelocation=0x7f0a000b;
+        public static final int button2=0x7f0a0008;
+        public static final int gallery1=0x7f0a0000;
+        public static final int help_legal_content_view=0x7f0a0002;
+        public static final int imageView1=0x7f0a0006;
+        public static final int listView1=0x7f0a0007;
+        public static final int loading_secondarystatus=0x7f0a0005;
+        public static final int loading_spinner=0x7f0a0003;
+        public static final int loading_status=0x7f0a0004;
+        public static final int textView1=0x7f0a0001;
+        public static final int themepreference_layout_Text=0x7f0a0009;
     }
     public static final class layout {
-        public static final int details=0x7f030000;
-        public static final int flipper=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int nextclearevent_fragment=0x7f030003;
-        public static final int nexteventlist_row=0x7f030004;
+        public static final int eventdetails_layout=0x7f030000;
+        public static final int help_layout=0x7f030001;
+        public static final int loading_layout=0x7f030002;
+        public static final int mainevents_layout=0x7f030003;
+        public static final int nolocationdata_layout=0x7f030004;
+        public static final int themepreference_layout=0x7f030005;
+    }
+    public static final class menu {
+        public static final int actionbar=0x7f090000;
     }
     public static final class string {
-        public static final int app_name=0x7f060006;
-        public static final int event_weather_icon=0x7f060007;
-        public static final int generic_content_description=0x7f060000;
-        public static final int internal_event_tag=0x7f060002;
-        public static final int internal_remote_url=0x7f060001;
-        public static final int internal_start_tag=0x7f060004;
-        public static final int internal_time_tag=0x7f060005;
-        public static final int internal_title_tag=0x7f060003;
-        public static final int more_info=0x7f060008;
-        public static final int upcoming_events=0x7f060009;
+        public static final int application_name=0x7f060005;
+        public static final int fragment_help_title=0x7f06000a;
+        public static final int fragment_home_title=0x7f06000c;
+        public static final int fragment_settings_title=0x7f06000b;
+        public static final int help_about_content=0x7f060007;
+        public static final int help_about_title=0x7f060006;
+        public static final int help_legal_content=0x7f060009;
+        public static final int help_legal_title=0x7f060008;
+        public static final int preference_theme_dark=0x7f060002;
+        public static final int preference_theme_light=0x7f060003;
+        public static final int preferencekey_currenttheme=0x7f060001;
+        public static final int preferencekey_do_theme_refresh=0x7f060004;
+        public static final int preferencekey_initapp=0x7f060000;
     }
+    public static final class style {
+        public static final int PredictTheSky=0x7f080000;
+        public static final int PredictTheSky_Dark=0x7f080001;
+        public static final int PredictTheSky_Light=0x7f080002;
+        public static final int PredictTheSky_Overlay=0x7f080003;
+    }
+    public static final class xml {
+        public static final int settings=0x7f040000;
+    }
+    public static final class styleable {
+        /** Attributes that can be used with a Theme_PredictTheSky.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Theme_PredictTheSky_actionbarIconLocate com.predictthesky.app:actionbarIconLocate}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_PredictTheSky_actionbarIconRefresh com.predictthesky.app:actionbarIconRefresh}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_PredictTheSky_loadingLocationSecondaryStatusText com.predictthesky.app:loadingLocationSecondaryStatusText}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_PredictTheSky_themepreferenceStateIcon com.predictthesky.app:themepreferenceStateIcon}</code></td><td></td></tr>
+           </table>
+           @see #Theme_PredictTheSky_actionbarIconLocate
+           @see #Theme_PredictTheSky_actionbarIconRefresh
+           @see #Theme_PredictTheSky_loadingLocationSecondaryStatusText
+           @see #Theme_PredictTheSky_themepreferenceStateIcon
+         */
+        public static final int[] Theme_PredictTheSky = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.predictthesky.app.R.attr#actionbarIconLocate}
+          attribute's value can be found in the {@link #Theme_PredictTheSky} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:actionbarIconLocate
+        */
+        public static final int Theme_PredictTheSky_actionbarIconLocate = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.predictthesky.app.R.attr#actionbarIconRefresh}
+          attribute's value can be found in the {@link #Theme_PredictTheSky} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:actionbarIconRefresh
+        */
+        public static final int Theme_PredictTheSky_actionbarIconRefresh = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.predictthesky.app.R.attr#loadingLocationSecondaryStatusText}
+          attribute's value can be found in the {@link #Theme_PredictTheSky} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:loadingLocationSecondaryStatusText
+        */
+        public static final int Theme_PredictTheSky_loadingLocationSecondaryStatusText = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.predictthesky.app.R.attr#themepreferenceStateIcon}
+          attribute's value can be found in the {@link #Theme_PredictTheSky} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:themepreferenceStateIcon
+        */
+        public static final int Theme_PredictTheSky_themepreferenceStateIcon = 3;
+    };
 }

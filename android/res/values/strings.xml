@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Predict The Sky</string>
-    <string name="event_weather_icon">Icon displaying the weather during the event</string>
-    <string name="more_info">More information..</string>
-    <string name="upcoming_events">Other upcoming events</string>
+    <string name="application_name">Predict The Sky</string>
+
+    <string-array name="settings_visualstyle_listentries">
+        <item>Dark</item>
+        <item>Light</item>
+    </string-array>
+    <string-array name="settings_visualstyle_listkeys">
+        <item>theme_holo_dark</item>
+        <item>theme_holo_light</item>
+    </string-array>
+
+    <string name="help_about_title">About</string>
+    <string name="help_about_content">Pulling in orbital tracking data from ISS, solar storm data, current planet positions, current location and weather forecast, Predict The Sky gives you an estimate of how likely you are to be able to see interesting things in the sky!</string>
+    <string name="help_legal_title">Legal</string>
+    <string name="help_legal_content">Copyright \u00a9 2012 PredictTheSky\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u0022Software\u0022), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u0022AS IS\u0022, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+    <string name="fragment_help_title">Help</string>
+    <string name="fragment_settings_title">Settings</string>
+    <string name="fragment_home_title">Home</string>
 
 </resources>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="overlay">#88FFFFFF</color>
-    
+
+    <color name="loadingLocationSecondaryStatusText_dark">#FF555555</color>
+    <color name="loadingLocationSecondaryStatusText_light">#FFAFAFAF</color>
+    <color name="transparent">#00000000</color>
+
 </resources>
