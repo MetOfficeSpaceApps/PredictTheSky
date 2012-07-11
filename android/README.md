@@ -2,7 +2,7 @@
 
 _an android client for Predict the Sky._
 
-**Note: Requires Android 2.1 (Target 2.3.3+)**
+**Note: Requires Android 4.0 (Target 4.1)**
 
 ## Dependencies
 

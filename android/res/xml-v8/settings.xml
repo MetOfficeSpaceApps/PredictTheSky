@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Display" >
+        <CheckboxPreference
+            android:enabled="false"
+            android:key="@string/preferencekey_currenttheme"
+            android:summary="Coming soon"
+            android:switchTextOff="Dark"
+            android:switchTextOn="Light"
+            android:title="Theme" >
+        </CheckboxPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

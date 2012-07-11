@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <SwitchPreference
+        android:key="@string/preferencekey_usegps"
+        android:summary="Allow use of GPS location services"
+        android:switchTextOff="No"
+        android:switchTextOn="Yes"
+        android:title="Use GPS" >
+    </SwitchPreference>
+
+</PreferenceScreen>

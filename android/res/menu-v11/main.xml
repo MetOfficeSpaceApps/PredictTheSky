@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/actionbar_updatedata"
+        android:icon="?attr/actionbarIconRefresh"
+        android:showAsAction="ifRoom"
+        android:title="Refresh"/>
+    <item
+        android:id="@+id/actionbar_updatelocation"
+        android:icon="?attr/actionbarIconLocate"
+        android:showAsAction="ifRoom"
+        android:title="Update Location"/>
+    <item
+        android:id="@+id/actionbar_overflow_settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:showAsAction="never"
+        android:title="Settings"/>
+    <item
+        android:id="@+id/actionbar_overflow_help"
+        android:icon="@android:drawable/ic_menu_help"
+        android:showAsAction="never"
+        android:title="Help"/>
+
+</menu>

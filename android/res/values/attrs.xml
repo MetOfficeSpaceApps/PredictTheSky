@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="Theme.PredictTheSky">
+        <attr name="actionbarIconRefresh" format="reference" />
+        <attr name="actionbarIconLocate" format="reference" />
+        <attr name="loadingLocationSecondaryStatusText" format="reference" />
+        <attr name="themepreferenceStateIcon" format="reference" />
+    </declare-styleable>
+    
+</resources>

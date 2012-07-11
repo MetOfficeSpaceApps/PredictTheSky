@@ -8,9 +8,12 @@
 package com.predictthesky.app;
 
 public final class R {
-    public static final class array {
-        public static final int settings_visualstyle_listentries=0x7f070000;
-        public static final int settings_visualstyle_listkeys=0x7f070001;
+    public static final class anim {
+        public static final int fade_in=0x7f040000;
+        public static final int fade_out=0x7f040001;
+        public static final int pulse=0x7f040002;
+        public static final int selection=0x7f040003;
+        public static final int spin=0x7f040004;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -31,69 +34,92 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int themepreferenceStateIcon=0x7f010003;
     }
     public static final class color {
-        public static final int loadingLocationSecondaryStatusText_dark=0x7f050000;
-        public static final int loadingLocationSecondaryStatusText_light=0x7f050001;
-        public static final int transparent=0x7f050002;
+        public static final int holoAccent=0x7f060000;
+        public static final int translucentOverlay=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_action_locate_dark=0x7f020000;
-        public static final int ic_action_locate_light=0x7f020001;
-        public static final int ic_action_refresh_dark=0x7f020002;
-        public static final int ic_action_refresh_light=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_settings_themeicon_dark=0x7f020005;
-        public static final int ic_settings_themeicon_light=0x7f020006;
+        public static final int ic_action_info=0x7f020000;
+        public static final int ic_action_locate_dark=0x7f020001;
+        public static final int ic_action_locate_light=0x7f020002;
+        public static final int ic_action_refresh_dark=0x7f020003;
+        public static final int ic_action_refresh_light=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int ic_weather_clear_sunny_dark=0x7f020006;
+        public static final int ic_weather_scattered_cloud_dark=0x7f020007;
+        public static final int ic_weather_scattered_cloud_light=0x7f020008;
+        public static final int iss=0x7f020009;
     }
     public static final class id {
-        public static final int actionbar_overflow_help=0x7f0a000d;
-        public static final int actionbar_overflow_settings=0x7f0a000c;
-        public static final int actionbar_updatedata=0x7f0a000a;
-        public static final int actionbar_updatelocation=0x7f0a000b;
-        public static final int button2=0x7f0a0008;
-        public static final int gallery1=0x7f0a0000;
-        public static final int help_legal_content_view=0x7f0a0002;
-        public static final int imageView1=0x7f0a0006;
-        public static final int listView1=0x7f0a0007;
-        public static final int loading_secondarystatus=0x7f0a0005;
-        public static final int loading_spinner=0x7f0a0003;
-        public static final int loading_status=0x7f0a0004;
-        public static final int textView1=0x7f0a0001;
-        public static final int themepreference_layout_Text=0x7f0a0009;
+        public static final int actionbar_overflow_help=0x7f0b0015;
+        public static final int actionbar_overflow_settings=0x7f0b0014;
+        public static final int actionbar_updatedata=0x7f0b0016;
+        public static final int actionbar_updatelocation=0x7f0b0013;
+        public static final int button1=0x7f0b0004;
+        public static final int button2=0x7f0b0003;
+        public static final int eventdetails_info=0x7f0b0006;
+        public static final int eventdetails_wikibutton=0x7f0b0005;
+        public static final int eventlistrow_time=0x7f0b000e;
+        public static final int eventlistrow_title=0x7f0b000d;
+        public static final int eventlistrow_weather=0x7f0b000f;
+        public static final int eventlistrow_weathericon=0x7f0b000c;
+        public static final int fragment_eventdetails=0x7f0b0000;
+        public static final int fragment_nextcleareventframe=0x7f0b0011;
+        public static final int fragment_upcomingeventlist=0x7f0b0010;
+        public static final int gallery1=0x7f0b0001;
+        public static final int help_legal_content_view=0x7f0b0009;
+        public static final int nextcleareventframe_backdrop=0x7f0b000b;
+        public static final int nextcleareventframe_container=0x7f0b000a;
+        public static final int textView1=0x7f0b0002;
+        public static final int textView2=0x7f0b0007;
+        public static final int textView3=0x7f0b0008;
+        public static final int themepreference_layout_Text=0x7f0b0012;
+    }
+    public static final class integer {
+        public static final int GPSLocateTimeout=0x7f070000;
     }
     public static final class layout {
-        public static final int eventdetails_layout=0x7f030000;
-        public static final int help_layout=0x7f030001;
-        public static final int loading_layout=0x7f030002;
-        public static final int mainevents_layout=0x7f030003;
-        public static final int nolocationdata_layout=0x7f030004;
-        public static final int themepreference_layout=0x7f030005;
+        public static final int animated_refresh_item=0x7f030000;
+        public static final int animated_updatelocation_item=0x7f030001;
+        public static final int details=0x7f030002;
+        public static final int fragment_details=0x7f030003;
+        public static final int fragment_eventdetails=0x7f030004;
+        public static final int fragment_help=0x7f030005;
+        public static final int fragment_nextcleareventframe=0x7f030006;
+        public static final int fragment_upcomingeventlist_row=0x7f030007;
+        public static final int home=0x7f030008;
+        public static final int themepreference_layout=0x7f030009;
     }
     public static final class menu {
-        public static final int actionbar=0x7f090000;
+        public static final int details=0x7f0a0000;
+        public static final int main=0x7f0a0001;
     }
     public static final class string {
-        public static final int application_name=0x7f060005;
-        public static final int fragment_help_title=0x7f06000a;
-        public static final int fragment_home_title=0x7f06000c;
-        public static final int fragment_settings_title=0x7f06000b;
-        public static final int help_about_content=0x7f060007;
-        public static final int help_about_title=0x7f060006;
-        public static final int help_legal_content=0x7f060009;
-        public static final int help_legal_title=0x7f060008;
-        public static final int preference_theme_dark=0x7f060002;
-        public static final int preference_theme_light=0x7f060003;
-        public static final int preferencekey_currenttheme=0x7f060001;
-        public static final int preferencekey_do_theme_refresh=0x7f060004;
-        public static final int preferencekey_initapp=0x7f060000;
+        public static final int activity_details_title=0x7f08000e;
+        public static final int activity_home_title=0x7f08000d;
+        public static final int application_name=0x7f080006;
+        public static final int fragment_help_about_content=0x7f080008;
+        public static final int fragment_help_about_title=0x7f080007;
+        public static final int fragment_help_legal_content=0x7f08000a;
+        public static final int fragment_help_legal_title=0x7f080009;
+        public static final int fragment_help_title=0x7f08000b;
+        public static final int fragment_settings_title=0x7f08000c;
+        public static final int preferencekey_currenttheme=0x7f080000;
+        public static final int preferencekey_defaultlatitude=0x7f080003;
+        public static final int preferencekey_defaultlongitude=0x7f080004;
+        public static final int preferencekey_latitude=0x7f080001;
+        public static final int preferencekey_longitude=0x7f080002;
+        public static final int preferencekey_usegps=0x7f080005;
+        public static final int remote_arguments_latitude=0x7f08000f;
+        public static final int remote_arguments_longitude=0x7f080010;
     }
     public static final class style {
-        public static final int PredictTheSky=0x7f080000;
-        public static final int PredictTheSky_Dark=0x7f080001;
-        public static final int PredictTheSky_Light=0x7f080002;
-        public static final int PredictTheSky_Overlay=0x7f080003;
+        public static final int PredictTheSky_Dark=0x7f090000;
+        public static final int PredictTheSky_Light=0x7f090001;
     }
     public static final class xml {
-        public static final int settings=0x7f040000;
+        public static final int locationsettings=0x7f050000;
+        public static final int settings=0x7f050001;
+        public static final int settings_headers=0x7f050002;
     }
     public static final class styleable {
         /** Attributes that can be used with a Theme_PredictTheSky.

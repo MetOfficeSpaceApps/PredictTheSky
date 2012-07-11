@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="PredictTheSky.Dark" parent="@android:style/Theme.Holo">
+        <item name="actionbarIconRefresh">@drawable/ic_action_refresh_dark</item>
+        <item name="actionbarIconLocate">@drawable/ic_action_locate_dark</item>
+    </style>
+
+    <style name="PredictTheSky.Light" parent="@android:style/Theme.Holo.Light">
+        <item name="actionbarIconRefresh">@drawable/ic_action_refresh_light</item>
+        <item name="actionbarIconLocate">@drawable/ic_action_locate_light</item>
+    </style>
+
+</resources>

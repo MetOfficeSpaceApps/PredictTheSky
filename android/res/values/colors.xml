@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="loadingLocationSecondaryStatusText_dark">#FF555555</color>
-    <color name="loadingLocationSecondaryStatusText_light">#FFAFAFAF</color>
-    <color name="transparent">#00000000</color>
+    <color name="holoAccent">#FF0099CC</color>
+    <color name="translucentOverlay">#88000000</color>
 
 </resources>

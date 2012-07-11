@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="preferencekey_currenttheme">keyAppTheme</string>
+    <string name="preferencekey_latitude">keyLatitude</string>
+    <string name="preferencekey_longitude">keyLongitude</string>
+    <string name="preferencekey_defaultlatitude">keyDefaultLatitude</string>
+    <string name="preferencekey_defaultlongitude">keyDefaultLongitude</string>
+    <string name="preferencekey_usegps">keyUseGPS</string>
+
+</resources>

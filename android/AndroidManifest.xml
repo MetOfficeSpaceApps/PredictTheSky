@@ -6,27 +6,35 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="15" />
+        android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".PredictTheSkyApplication"
-        android:hardwareAccelerated="true"
+        android:name=".App"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/application_name"
-        android:theme="@android:style/Theme.Black.NoTitleBar" android:icon="@drawable/ic_launcher">
-        <activity android:name=".LauncherActivity" >
+        android:theme="@android:style/Theme.Black.NoTitleBar" >
+
+        <!-- Set Application theme to a black screen so there is no visible change on fragment load -->
+
+        <activity
+            android:name=".HomeActivity"
+            android:hardwareAccelerated="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".InitActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".HelpActivity" />
+        <activity
+            android:name=".DetailsActivity"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".SettingsActivity"
+            android:hardwareAccelerated="true" />
     </application>
 
 </manifest>
